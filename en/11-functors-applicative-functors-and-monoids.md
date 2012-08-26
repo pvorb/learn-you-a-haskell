@@ -30,7 +30,7 @@ of like socks.
 Functors redux
 --------------
 
-![frogs dont even need money](img/frogtor.png)
+![frogs dont even need money](../img/frogtor.png)
 
 We've already talked about functors in [their own little
 section](making-our-own-types-and-typeclasses#the-functor-typeclass). If
@@ -127,7 +127,7 @@ main = do line <- fmap reverse getLine
           putStrLn $ "Yes, you really said" ++ line ++ " backwards!"
 ~~~~
 
-![w00ooOoooOO](img/alien.png)
+![w00ooOoooOO](../img/alien.png)
 
 Just like when we fmap reverse over Just "blah" to get Just "halb", we
 can fmap reverse over getLine. getLine is an I/O action that has a type
@@ -276,7 +276,7 @@ being mapped over a computation results in the same computation but the
 result of that computation is modified with the function.
 
 ![lifting a function is easier than lifting a million
-pounds](img/lifter.png)
+pounds](../img/lifter.png)
 
 Before we go on to the rules that fmap should follow, let's think about
 the type of fmap once more. Its type is fmap :: (a -\> b) -\> f a -\> f
@@ -405,7 +405,7 @@ trivial. So from these two equations in the implementation for fmap, we
 see that the law fmap id = id holds.
 
 ![justice is blind, but so is my
-dog](img/justice.png)
+dog](../img/justice.png)
 
 *The second law says that composing two functions and then mapping the
 resulting function over a functor should be the same as first mapping
@@ -570,7 +570,7 @@ three. This is what happens with composition.
 Applicative functors
 --------------------
 
-![disregard this analogy](img/present.png)
+![disregard this analogy](../img/present.png)
 
 In this section, we'll take a look at applicative functors, which are
 beefed up functors, represented in Haskell by the Applicative typeclass,
@@ -760,7 +760,7 @@ ghci> pure (+) <*> Nothing <*> Just 5
 Nothing
 ~~~~
 
-![whaale](img/whale.png)
+![whaale](../img/whale.png)
 
 What's going on here? Let's take a look, step by step. \<\*\> is
 left-associative, which means that pure (+) \<\*\> Just 3 \<\*\> Just 5
@@ -970,7 +970,7 @@ instance Applicative IO where
         return (f x)
 ~~~~
 
-![ahahahah!](img/knight.png)
+![ahahahah!](../img/knight.png)
 
 Since pure is all about putting a value in a minimal context that still
 holds it as its result, it makes sense that pure is just return, because
@@ -1106,7 +1106,7 @@ ghci> (\x y z -> [x,y,z]) <$> (+3) <*> (*2) <*> (/2) $ 5
 [8.0,10.0,2.5]
 ~~~~
 
-![SLAP](img/jazzb.png)
+![SLAP](../img/jazzb.png)
 
 Same here. We create a function that will call the function \\x y z -\>
 [x,y,z] with the eventual results from (+3), (\*2) and (/2). The 5 gets
@@ -1458,7 +1458,7 @@ semantics of each one.
 The newtype keyword
 -------------------
 
-![why\_ so serious?](img/maoi.png)
+![why\_ so serious?](../img/maoi.png)
 
 So far, we've learned how to make our own algebraic data types by using
 the *data* keyword. We've also learned how to give existing types
@@ -1624,7 +1624,7 @@ behaving like:
 fmap :: (a -> b) -> Maybe a -> Maybe b
 ~~~~
 
-![wow, very evil](img/krakatoa.png)
+![wow, very evil](../img/krakatoa.png)
 
 Isn't that just peachy? Now what if we wanted to make the tuple an
 instance of Functor in such a way that when we fmap a function over a
@@ -1764,7 +1764,7 @@ ghci> helloMe undefined
 "hello"
 ~~~~
 
-![top of the mornin to ya!!!](img/shamrock.png)
+![top of the mornin to ya!!!](../img/shamrock.png)
 
 It worked! Hmmm, why is that? Well, like we've said, when we use
 *newtype*, Haskell can internally represent the values of the new type
@@ -1862,7 +1862,7 @@ Monoids
 -------
 
 ![wow this is pretty much the gayest pirate ship
-ever](img/pirateship.png)
+ever](../img/pirateship.png)
 
 Type classes in Haskell are used to present an interface for types that
 have some behavior in common. We started out with simple type classes
@@ -1946,7 +1946,7 @@ class Monoid m where
     mconcat = foldr mappend mempty
 ~~~~
 
-![woof dee do!!!](img/balloondog.png)
+![woof dee do!!!](../img/balloondog.png)
 
 The Monoid type class is defined in import Data.Monoid. Let's take some
 time and get properly acquainted with it.
@@ -2039,7 +2039,7 @@ ghci> mempty :: [a]
 []
 ~~~~
 
-![smug as hell](img/smug.png)
+![smug as hell](../img/smug.png)
 
 Notice that in the last line, we had to write an explicit type
 annotation, because if we just did mempty, GHCi wouldn't know which
@@ -2260,7 +2260,7 @@ instance Monoid Ordering where
     GT `mappend` _ = GT
 ~~~~
 
-![did anyone ORDER pizza?!?! I can't BEAR these puns!](img/bear.png)
+![did anyone ORDER pizza?!?! I can't BEAR these puns!](../img/bear.png)
 
 The instance is set up like this: when we mappend two Ordering values,
 the one on the left is kept, unless the value on the left is EQ, in
@@ -2578,7 +2578,7 @@ instance F.Foldable Tree where
                              F.foldMap f r
 ~~~~
 
-![find the visual pun or whatever](img/accordion.png)
+![find the visual pun or whatever](../img/accordion.png)
 
 We think like this: if we are provided with a function that takes an
 element of our tree and returns a monoid value, how do we reduce our

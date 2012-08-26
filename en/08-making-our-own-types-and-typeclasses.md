@@ -31,7 +31,7 @@ this:
 data Int = -2147483648 | -2147483647 | ... | -1 | 0 | 1 | 2 | ... | 2147483647
 ~~~~
 
-![caveman](img/caveman.png)
+![caveman](../img/caveman.png)
 
 The first and last value constructors are the minimum and maximum
 possible values of Int. It's not actually defined like this, the
@@ -250,7 +250,7 @@ uses our module can't pattern match against the value constructors.
 Record syntax
 -------------
 
-![record](img/record.png)
+![record](../img/record.png)
 
 OK, we've been tasked with creating a data type that describes a person.
 The info that we want to store about that person is: first name, last
@@ -395,7 +395,7 @@ type we've already met is implemented.
 data Maybe a = Nothing | Just a
 ~~~~
 
-![yeti](img/yeti.png)
+![yeti](../img/yeti.png)
 
 The a here is the type parameter. And because there's a type parameter
 involved, we call Maybe a type constructor. Depending on what we want
@@ -507,7 +507,7 @@ ghci> :t Car "Ford" "Mustang" "nineteen sixty seven"
 Car "Ford" "Mustang" "nineteen sixty seven" :: Car [Char] [Char] [Char]
 ~~~~
 
-![meekrat](img/meekrat.png)
+![meekrat](../img/meekrat.png)
 
 In real life though, we'd end up using Car String String Int most of the
 time and so it would seem that parameterizing the Car type isn't really
@@ -605,7 +605,7 @@ Vector 148 666 222
 Derived instances
 -----------------
 
-![gob](img/gob.png)
+![gob](../img/gob.png)
 
 In the [Typeclasses 101](types-and-typeclasses#typeclasses-101) section,
 we explained the basics of typeclasses. We explained that a typeclass is
@@ -877,7 +877,7 @@ library defines String as a synonym for [Char].
 
 ~~~~
 
-![chicken](img/chicken.png)
+![chicken](../img/chicken.png)
 
 We've introduced the *type* keyword. The keyword might be misleading to
 some, because we're not actually making anything new (we did that with
@@ -1130,7 +1130,7 @@ about the failure in our result type.
 Recursive data structures
 -------------------------
 
-![the fonz](img/thefonz.png)
+![the fonz](../img/thefonz.png)
 
 As we've seen, a constructor in an algebraic data type can have several
 (or none at all) fields and each field must be of some concrete type.
@@ -1262,7 +1262,7 @@ match for stuff like that, normal prefix constructors or stuff like 8 or
 'a', which are basically constructors for the numeric and character
 types, respectively.
 
-![binary search tree](img/binarytree.png)
+![binary search tree](../img/binarytree.png)
 
 Now, we're going to implement a *binary search tree*. If you're not
 familiar with binary search trees from languages like C, here's what
@@ -1404,7 +1404,7 @@ boolean values and weekday enumerations to binary search trees and more!
 Typeclasses 102
 ---------------
 
-![tweet](img/trafficlight.png)
+![tweet](../img/trafficlight.png)
 
 So far, we've learned about some of the standard Haskell typeclasses and
 we've seen which types are in them. We've also learned how to
@@ -1670,7 +1670,7 @@ you the type declaration of a function. I think that's pretty cool.
 A yes-no typeclass
 ------------------
 
-![yesno](img/yesno.png)
+![yesno](../img/yesno.png)
 
 In JavaScript and some other weakly typed languages, you can put almost
 anything inside an if expression. For example, you can do all of the
@@ -1835,7 +1835,7 @@ class Functor f where
     fmap :: (a -> b) -> f a -> f b
 ~~~~
 
-![I AM FUNCTOOOOR!!!](img/functor.png)
+![I AM FUNCTOOOOR!!!](../img/functor.png)
 
 Alright. We see that it defines one function, fmap, and doesn't provide
 any default implementation for it. The type of fmap is interesting. In
@@ -2021,7 +2021,7 @@ chapters.
 Kinds and some type-foo
 -----------------------
 
-![TYPE FOO MASTER](img/typefoo.png)
+![TYPE FOO MASTER](../img/typefoo.png)
 
 Type constructors take other types as parameters to eventually produce
 concrete types. That kind of reminds me of functions, which take values

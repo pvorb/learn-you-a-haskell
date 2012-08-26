@@ -4,7 +4,7 @@ Types and Typeclasses
 Believe the type
 ----------------
 
-![moo](img/cow.png)
+![moo](../img/cow.png)
 
 Previously we mentioned that Haskell has a static type system. The type
 of every expression is known at compile time, which leads to safer code.
@@ -43,7 +43,7 @@ ghci> :t 4 == 5
 4 == 5 :: Bool
 ~~~~
 
-![bomb](img/bomb.png) Here we see that doing :t
+![bomb](../img/bomb.png) Here we see that doing :t
 on an expression prints out the expression followed by :: and its type.
 :: is read as "has type of". Explicit types are always denoted with the
 first letter in capital case. 'a', as it would seem, has a type of Char.
@@ -163,7 +163,7 @@ ghci> :t head
 head :: [a] -> a
 ~~~~
 
-![box](img/box.png) Hmmm! What is this a? Is it
+![box](../img/box.png) Hmmm! What is this a? Is it
 a type? Remember that we previously stated that types are written in
 capital case, so it can't exactly be a type. Because it's not in capital
 case it's actually a *type variable*. That means that a can be of any
@@ -195,7 +195,7 @@ return value's type are the same.
 Typeclasses 101
 ---------------
 
-![class](img/classes.png)
+![class](../img/classes.png)
 
 A typeclass is a sort of interface that defines some behavior. If a type
 is a part of a typeclass, that means that it supports and implements the

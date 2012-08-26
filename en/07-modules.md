@@ -4,7 +4,7 @@ Modules
 Loading modules
 ---------------
 
-![modules](img/modules.png)
+![modules](../img/modules.png)
 
 A Haskell module is a collection of related functions, types and
 typeclasses. A Haskell program is a collection of modules where the main
@@ -179,7 +179,7 @@ When we transpose these three lists, the third powers are then in the
 first row, the second powers in the second one and so on. Mapping sum to
 that produces our desired result.
 
-![shopping lists](img/legolists.png)
+![shopping lists](../img/legolists.png)
 
 foldl' and foldl1' are stricter versions of their respective lazy
 incarnations. When using lazy folds on really big lists, you might often
@@ -760,7 +760,7 @@ compare \`on\` something.
 Data.Char
 ---------
 
-![lego char](img/legochar.png)
+![lego char](../img/legochar.png)
 
 The Data.Char module does what its name suggests. It exports functions
 that deal with characters. It's also helpful when filtering and mapping
@@ -1055,7 +1055,7 @@ ghci> findKey "wilma" phoneBook
 Nothing
 ~~~~
 
-![legomap](img/legomap.png)
+![legomap](../img/legomap.png)
 
 Works like a charm! If we have the girl's phone number, we Just get the
 number, otherwise we get Nothing.
@@ -1288,7 +1288,7 @@ list of functions in the
 Data.Set
 --------
 
-![legosets](img/legosets.png)
+![legosets](../img/legosets.png)
 
 The Data.Set module offers us, well, sets. Like sets from mathematics.
 Sets are kind of like a cross between lists and maps. All the elements
@@ -1425,7 +1425,7 @@ preserves the ordering of the list's elements, while setNub does not.
 Making our own modules
 ----------------------
 
-![making modules](img/making_modules.png)
+![making modules](../img/making_modules.png)
 
 We've looked at some cool modules so far, but how do we make our own
 module? Almost every programming language enables you to split your code

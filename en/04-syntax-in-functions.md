@@ -4,7 +4,7 @@ Syntax in Functions
 Pattern matching
 ----------------
 
-![four!](img/pattern.png)
+![four!](../img/pattern.png)
 
 This chapter will cover some of Haskell's cool syntactic constructs and
 we'll start with pattern matching. Pattern matching consists of
@@ -287,7 +287,7 @@ because of the nature of lists, you can't do that.
 Guards, guards!
 ---------------
 
-![guards](img/guards.png)
+![guards](../img/guards.png)
 
 Whereas patterns are a way of making sure a value conforms to some form
 and deconstructing it, guards are a way of testing whether some property
@@ -538,7 +538,7 @@ cylinder r h =
     in  sideArea + 2 * topArea
 ~~~~
 
-![let it be](img/letitbe.png)
+![let it be](../img/letitbe.png)
 
 The form is let \<bindings\> in \<expression\>. The names that you
 define in the *let* part are accessible to the expression after the *in*
@@ -645,7 +645,7 @@ its name and type declaration and to some that's more readable.
 Case expressions
 ----------------
 
-![case](img/case.png)
+![case](../img/case.png)
 
 Many imperative languages (C, C++, Java, etc.) have case syntax and if
 you've ever programmed in them, you probably know what it's about. It's

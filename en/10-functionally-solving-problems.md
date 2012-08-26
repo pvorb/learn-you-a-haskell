@@ -36,7 +36,7 @@ stack. When you reach the end of the expression, you should be left with
 a single number if the expression was well-formed and that number
 represents the result.
 
-![this expression](img/rpn.png)
+![this expression](../img/rpn.png)
 
 Let's go over the expression 10 4 3 + 2 \* - together! First we push 10
 on to the stack and the stack is now 10. The next item is 4, so we push
@@ -66,7 +66,7 @@ function should be before concerning ourselves with the implementation
 and then write it down. In Haskell, a function's type declaration tells
 us a whole lot about the function, due to the very strong type system.
 
-![HA HA HA](img/calculator.png)
+![HA HA HA](../img/calculator.png)
 
 Cool. When implementing a solution to a problem in Haskell, it's also
 good to think back on how you did it by hand and maybe try to see if you
@@ -279,7 +279,7 @@ the optimal path to take so that you get to London as fast as you can!
 You start on the left side and can either cross to the other main road
 or go forward.
 
-![Heathrow - London](img/roads.png)
+![Heathrow - London](../img/roads.png)
 
 As you can see in the picture, the shortest path from Heathrow to London
 in this case is to start on main road B, cross over, go forward on A,
@@ -340,7 +340,7 @@ of say that we're pretty sure.
 That's not a good solution then. Here's a simplified picture of our road
 system:
 
-![roads](img/roads_simple.png)
+![roads](../img/roads_simple.png)
 
 Alright, can you figure out what the shortest path to the first
 crossroads (the first blue dot on A, marked *A1*) on road A is? That's
@@ -536,7 +536,7 @@ roadStep (pathA, pathB) (Section a b c) =
     in  (newPathToA, newPathToB)
 ~~~~
 
-![this is you](img/guycar.png)
+![this is you](../img/guycar.png)
 
 What's going on here? First, calculate the optimal price on road A based
 on the best so far on A and we do the same for B. We do sum \$ map snd

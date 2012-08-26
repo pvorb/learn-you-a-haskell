@@ -1,7 +1,7 @@
 Zippers
 =======
 
-![hi im chet](img/60sdude.png)
+![hi im chet](../img/60sdude.png)
 
 While Haskell's purity comes with a whole bunch of benefits, it makes us
 tackle some problems differently than we would in impure languages.
@@ -71,7 +71,7 @@ freeTree =
 
 And here's this tree represented graphically:
 
-![polly says her back hurts](img/pollywantsa.png)
+![polly says her back hurts](../img/pollywantsa.png)
 
 Notice that W in the tree there? Say we want to change it into a P. How
 would we go about doing that? Well, one way would be to pattern match on
@@ -158,7 +158,7 @@ nearby.
 A trail of breadcrumbs
 ----------------------
 
-![whoop dee doo](img/bread.png)
+![whoop dee doo](../img/bread.png)
 
 Okay, so for focusing on a sub-tree, we want something better than just
 a list of directions that we always follow from the root of our tree.
@@ -202,7 +202,7 @@ ghci> goLeft (goRight (freeTree, []))
 (Node 'W' (Node 'C' Empty Empty) (Node 'R' Empty Empty),[L,R])
 ~~~~
 
-![almostthere](img/almostzipper.png)
+![almostthere](../img/almostzipper.png)
 
 Okay, so now we have a tree that has 'W' in its root and 'C' in the root
 of its left sub-tree and 'R' in the root of its right sub-tree. The
@@ -316,7 +316,7 @@ goUp (t, LeftCrumb x r:bs) = (Node x t r, bs)
 goUp (t, RightCrumb x l:bs) = (Node x l t, bs)
 ~~~~
 
-![asstronaut](img/asstronaut.png)
+![asstronaut](../img/asstronaut.png)
 
 We're focusing on the tree t and we check what the latest Crumb is. If
 it's a LeftCrumb, then we construct a new tree where our tree t is the
@@ -455,7 +455,7 @@ we defined our data type like so:
 data List a = Empty | Cons a (List a) deriving (Show, Read, Eq, Ord)
 ~~~~
 
-![the best damn thing](img/picard.png)
+![the best damn thing](../img/picard.png)
 
 Contrast this with our definition of our binary tree and it's easy to
 see how lists can be viewed as trees where each node has only one
@@ -595,7 +595,7 @@ That's actually what my disk contains right now.
 
 ### A zipper for our file system
 
-![spongedisk](img/spongedisk.png)
+![spongedisk](../img/spongedisk.png)
 
 Now that we have a file system, all we need is a zipper so we can zip
 and zoom around it and add, modify and remove files as well as folders.
@@ -674,7 +674,7 @@ on the file with the given name. That file has to be in the current
 focused folder. This function doesn't search all over the place, it just
 looks at the current folder.
 
-![wow cool great](img/cool.png)
+![wow cool great](../img/cool.png)
 
 First we use break to break the list of items in a folder into those
 that precede the file that we're searching for and those that come after
@@ -784,7 +784,7 @@ goLeft :: Zipper a -> Zipper a
 goLeft (Node x l r, bs) = (l, LeftCrumb x r:bs)
 ~~~~
 
-![falling for you](img/bigtree.png)
+![falling for you](../img/bigtree.png)
 
 But what if the tree we're stepping off from is an empty tree? That is,
 what if it's not a Node, but an Empty? In this case, we'd get a runtime

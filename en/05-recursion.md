@@ -4,7 +4,7 @@ Recursion
 Hello recursion!
 ----------------
 
-![SOVIET RUSSIA](img/recursion.png)
+![SOVIET RUSSIA](../img/recursion.png)
 
 We mention recursion briefly in the previous chapter. In this chapter,
 we'll take a closer look at recursion, why it's important to Haskell and
@@ -109,7 +109,7 @@ maximum' (x:xs) = max x (maximum' xs)
 How's that for elegant! In essence, the maximum of a list is the max of
 the first element and the maximum of the tail.
 
-![max](img/maxs.png)
+![max](../img/maxs.png)
 
 A few more recursive functions
 ------------------------------
@@ -156,7 +156,7 @@ take' _ []     = []
 take' n (x:xs) = x : take' (n-1) xs
 ~~~~
 
-![painter](img/painter.png)
+![painter](../img/painter.png)
 
 The first pattern specifies that if we try to take a 0 or negative
 number of elements, we get an empty list. Notice that we're using \_ to
@@ -256,7 +256,7 @@ Therefore, let's implement it here, even though implementing quicksort
 in Haskell is considered really cheesy because everyone does it to
 showcase how elegant Haskell is.
 
-![quickman](img/quickman.png)
+![quickman](../img/quickman.png)
 
 So, the type signature is going to be quicksort :: (Ord a) =\> [a] -\>
 [a]. No surprises there. The edge condition? Empty list, as is expected.
@@ -303,7 +303,7 @@ Eventually, we'll break it up so much that we reach empty lists and an
 empty list is already sorted in a way, by virtue of being empty. Here's
 an illustration:
 
-![quicksort](img/quicksort.png)
+![quicksort](../img/quicksort.png)
 
 An element that is in place and won't move anymore is represented in
 orange. If you read them from left to right, you'll see the sorted list.
@@ -328,7 +328,7 @@ element of the list times the product of the rest of the list. The
 length of a list is one plus the length of the tail of the list.
 Ekcetera, ekcetera ...
 
-![brain](img/brain.png)
+![brain](../img/brain.png)
 
 Of course, these also have edge cases. Usually the edge case is some
 scenario where a recursive application doesn't make sense. When dealing

@@ -4,7 +4,7 @@ Starting Out
 Ready, set, go!
 ---------------
 
-![egg](img/startingout.png) Alright, let's get
+![egg](../img/startingout.png) Alright, let's get
 started! If you're the sort of horrible person who doesn't read
 introductions to things and you skipped it, you might want to read the
 last section in the introduction anyway because it explains what you
@@ -118,7 +118,7 @@ them. As you've seen, we call it by sandwiching it between them. This is
 what we call an *infix* function. Most functions that aren't used with
 numbers are *prefix* functions. Let's take a look at them.
 
-![phoen](img/ringring.png) Functions are
+![phoen](../img/ringring.png) Functions are
 usually prefix so from now on we won't explicitly state that a function
 is of the prefix form, we'll just assume it. In most imperative
 languages functions are called by writing the function name and then
@@ -264,7 +264,7 @@ doubleSmallNumber x = if x > 100
                         else x*2
 ~~~~
 
-![this is you](img/baby.png)
+![this is you](../img/baby.png)
 
 Right here we introduced Haskell's if statement. You're probably
 familiar with if statements from other languages. The difference between
@@ -310,7 +310,7 @@ O'Brien!" can be used interchangeably.
 An intro to lists
 -----------------
 
-![BUY A DOG](img/list.png) Much like shopping
+![BUY A DOG](../img/list.png) Much like shopping
 lists in the real world, lists in Haskell are very useful. It's the most
 used data structure and it can be used in a multitude of different ways
 to model and solve a whole bunch of problems. Lists are SO awesome. In
@@ -468,7 +468,7 @@ ghci> init [5,4,3,2,1]
 
 If we think of a list as a monster, here's what's what.
 
-![list monster](img/listmonster.png)
+![list monster](../img/listmonster.png)
 
 But what happens if we try to get the head of an empty list?
 
@@ -580,7 +580,7 @@ look at more list functions [later](modules#data-list)
 Texas ranges
 ------------
 
-![draw](img/cowboy.png) What if we want a list
+![draw](../img/cowboy.png) What if we want a list
 of all numbers between 1 and 20? Sure, we could just type them all out
 but obviously that's not a solution for gentlemen who demand excellence
 from their programming languages. Instead, we'll use ranges. Ranges are
@@ -674,12 +674,12 @@ some number of the same element in a list. replicate 3 10 returns
 I'm a list comprehension
 ------------------------
 
-![frog](img/kermit.png) If you've ever taken a
+![frog](../img/kermit.png) If you've ever taken a
 course in mathematics, you've probably run into *set comprehensions*.
 They're normally used for building more specific sets out of general
 sets. A basic comprehension for a set that contains the first ten even
 natural numbers is ![set
-notation](img/setnotation.png). The part before
+notation](../img/setnotation.png). The part before
 the pipe is called the output function, x is the variable, N is the
 input set and x \<= 10 is the predicate. That means that the set
 contains the doubles of all natural numbers that satisfy the predicate.
@@ -828,7 +828,7 @@ lines, especially if they're nested.
 Tuples
 ------
 
-![tuples](img/tuple.png)
+![tuples](../img/tuple.png)
 
 In some ways, tuples are like lists — they are a way to store several
 values into a single value. However, there are a few fundamental
@@ -945,7 +945,7 @@ ghci> zip [1..] ["apple", "orange", "cherry", "mango"]
 [(1,"apple"),(2,"orange"),(3,"cherry"),(4,"mango")]
 ~~~~
 
-![look at meee](img/pythag.png)
+![look at meee](../img/pythag.png)
 
 Here's a problem that combines tuples and list comprehensions: which
 right triangle that has integers for all sides and all sides equal to or

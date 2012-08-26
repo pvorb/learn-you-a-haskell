@@ -1,7 +1,7 @@
 Input and Output
 ================
 
-![poor dog](img/dognap.png)
+![poor dog](../img/dognap.png)
 
 We've mentioned that Haskell is a purely functional language. Whereas in
 imperative languages you usually get things done by giving the computer
@@ -41,7 +41,7 @@ while efficiently communicating with the outside world.
 Hello, world!
 -------------
 
-![HELLO!](img/helloworld.png)
+![HELLO!](../img/helloworld.png)
 
 Up until now, we've always loaded our functions into GHCI to test them
 out and play with them. We've also explored the standard library
@@ -145,7 +145,7 @@ ghci> :t getLine
 getLine :: IO String
 ~~~~
 
-![luggage](img/luggage.png)
+![luggage](../img/luggage.png)
 
 Aha, o-kay. getLine is an I/O action that contains a result type of
 String. That makes sense, because it will wait for the user to input
@@ -755,7 +755,7 @@ performed, print beautiful poetry to your terminal.
 Files and streams
 -----------------
 
-![streams](img/streams.png)
+![streams](../img/streams.png)
 
 getChar is an I/O action that reads a single character from the
 terminal. getLine is an I/O action that reads a line from the terminal.
@@ -1128,7 +1128,7 @@ IOMode is a type that's defined like this:
 data IOMode = ReadMode | WriteMode | AppendMode | ReadWriteMode
 ~~~~
 
-![A FILE IN A CAKE!!!](img/file.png)
+![A FILE IN A CAKE!!!](../img/file.png)
 
 Just like our type that represents the seven possible values for the
 days of the week, this type is an enumeration that represents what we
@@ -1212,7 +1212,7 @@ withFile' path mode f = do
     return result
 ~~~~
 
-![butter toast](img/edd.png)
+![butter toast](../img/edd.png)
 
 We know the result will be an I/O action so we can just start off with a
 *do*. First we open the file and get a handle from it. Then, we apply
@@ -1508,7 +1508,7 @@ Command line arguments
 ----------------------
 
 ![COMMAND LINE ARGUMENTS!!!
-ARGH](img/arguments.png)
+ARGH](../img/arguments.png)
 
 Dealing with command line arguments is pretty much a necessity if you
 want to make a script or application that runs on a terminal. Luckily,
@@ -1756,7 +1756,7 @@ remove [fileName, numberString] = do
     renameFile tempName fileName
 ~~~~
 
-![fresh baked salad](img/salad.png)
+![fresh baked salad](../img/salad.png)
 
 To summarize our solution: we made a dispatch association that maps from
 commands to functions that take some command line arguments and return
@@ -1813,7 +1813,7 @@ Randomness
 ----------
 
 ![this picture is the ultimate source of randomness and
-wackiness](img/random.png)
+wackiness](../img/random.png)
 
 Many times while programming, you need to get some random data. Maybe
 you're making a game where a die needs to be thrown or you need to
@@ -2160,7 +2160,7 @@ askForNumber gen = do
         askForNumber newGen
 ~~~~
 
-![jack of diamonds](img/jackofdiamonds.png)
+![jack of diamonds](../img/jackofdiamonds.png)
 
 We make a function askForNumber, which takes a random number generator
 and returns an I/O action that will prompt the user for a number and
@@ -2239,7 +2239,7 @@ Bytestrings
 -----------
 
 ![like normal string, only they byte ... what a pedestrian pun this
-is](img/chainchomp.png)
+is](../img/chainchomp.png)
 
 Lists are a cool and useful data structure. So far, we've used them
 pretty much everywhere. There are a multitude of functions that operate
@@ -2444,7 +2444,7 @@ bytestrings if the performance is not satisfactory.
 Exceptions
 ----------
 
-![timberr!!!!](img/timber.png)
+![timberr!!!!](../img/timber.png)
 
 All languages have procedures, functions, and pieces of code that might
 fail in some way. That's just a fact of life. Different languages have
@@ -2494,7 +2494,7 @@ ghci> head []
 
 ![Stop right there, criminal scum! Nobody breaks the law on my watch!
 Now pay your fine or it's off to
-jail.](img/police.png)
+jail.](../img/police.png)
 
 Pure code can throw exceptions, but it they can only be caught in the
 I/O part of our code (when we're inside a *do* block that goes into
@@ -2591,7 +2591,7 @@ result is an I/O action that will either act the same as the first
 parameter or it will do what the handler tells it if the first I/O
 action throws an exception.
 
-![non sequitor](img/puppy.png)
+![non sequitor](../img/puppy.png)
 
 If you're familiar with *try-catch* blocks in languages like Java or
 Python, the catch function is similar to them. The first parameter is

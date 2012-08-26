@@ -12,7 +12,7 @@ In this chapter, we'll learn about monads, which are just beefed up
 applicative functors, much like applicative functors are only beefed up
 functors.
 
-![more cool than u](img/smugpig.png)
+![more cool than u](../img/smugpig.png)
 
 When we started off with functors, we saw that it's possible to map
 functions over various data types. We saw that for this purpose, the
@@ -101,7 +101,7 @@ their behavior, but you'll see that it's easy as one two three.
 Getting our feet wet with Maybe
 -------------------------------
 
-![monads, grasshoppa](img/buddha.png)
+![monads, grasshoppa](../img/buddha.png)
 
 Now that we have a vague idea of what monads are about, let's see if we
 can make that idea a bit less vague.
@@ -273,7 +273,7 @@ class Monad m where
     fail msg = error msg
 ~~~~
 
-![this is you on monads](img/kid.png)
+![this is you on monads](../img/kid.png)
 
 Let's start with the first line. It says class Monad m where. But wait,
 didn't we say that monads are just beefed up applicative functors?
@@ -299,7 +299,7 @@ Just a reminder: return is nothing like the return that's in most other
 languages. It doesn't end function execution or anything, it just takes
 a normal value and puts it in a context.
 
-![hmmm yaes](img/tur2.png)
+![hmmm yaes](../img/tur2.png)
 
 The next function is \>\>=, or bind. It's like function application,
 only instead of taking a normal value and feeding it to a normal
@@ -360,7 +360,7 @@ it's Nothing, the result of using \>\>= will be Nothing as well.
 Walk the line
 -------------
 
-![pierre](img/pierre.png)
+![pierre](../img/pierre.png)
 
 Now that we know how to feed a Maybe a value to a function of type a -\>
 Maybe b while taking into account the context of possible failure, let's
@@ -589,7 +589,7 @@ ghci> return (0,0) >>= landLeft 1 >>= landRight 4 >>= landLeft (-1) >>= landRigh
 Nothing
 ~~~~
 
-![iama banana](img/banana.png)
+![iama banana](../img/banana.png)
 
 Awesome. The final result represents failure, which is what we expected.
 Let's see how this result was obtained. First, return puts (0,0) into a
@@ -690,7 +690,7 @@ routine = case landLeft 1 (0,0) of
             Just pole3 -> landLeft 1 pole3
 ~~~~
 
-![john joe glanton](img/centaur.png)
+![john joe glanton](../img/centaur.png)
 
 We land a bird on the left and then we examine the possibility of
 failure and the possibility of success. In the case of failure, we
@@ -793,7 +793,7 @@ foo = do
     Just (show x ++ y)
 ~~~~
 
-![90s owl](img/owld.png)
+![90s owl](../img/owld.png)
 
 It would seem as though we've gained the ability to temporarily extract
 things from Maybe values without having to check if the Maybe values are
@@ -983,7 +983,7 @@ neat.
 The list monad
 --------------
 
-![dead cat](img/deadcat.png)
+![dead cat](../img/deadcat.png)
 
 So far, we've seen how Maybe values can be viewed as values with a
 failure context and how we can incorporate failure handling into our
@@ -1091,7 +1091,7 @@ ghci> [1,2] >>= \n -> ['a','b'] >>= \ch -> return (n,ch)
 [(1,'a'),(1,'b'),(2,'a'),(2,'b')]
 ~~~~
 
-![concatmap](img/concatmap.png)
+![concatmap](../img/concatmap.png)
 
 The list [1,2] gets bound to n and ['a','b'] gets bound to ch. Then, we
 do return (n,ch) (or [(n,ch)]), which means taking a pair of (n,ch) and
@@ -1264,7 +1264,7 @@ three moves. We'll just use a pair of numbers to represent the knight's
 position on the chess board. The first number will determine the column
 he's in and the second number will determine the row.
 
-![hee haw im a horse](img/chess.png)
+![hee haw im a horse](../img/chess.png)
 
 Let's make a type synonym for the knight's current position on the chess
 board:
@@ -1384,7 +1384,7 @@ it is now.
 Monad laws
 ----------
 
-![the court finds you guilty of peeing all over everything](img/judgedog.png)
+![the court finds you guilty of peeing all over everything](../img/judgedog.png)
 
 Just like applicative functors, and functors before them, monads come
 with a few laws that all monad instances must abide by. Just because

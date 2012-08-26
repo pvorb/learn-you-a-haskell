@@ -1,7 +1,7 @@
 Higher order functions
 ======================
 
-![sun](img/sun.png)
+![sun](../img/sun.png)
 
 Haskell functions can take functions as parameters and return functions
 as return values. A function that does either of those is called a
@@ -35,7 +35,7 @@ ghci> (max 4) 5
 5
 ~~~~
 
-![haskell curry](img/curry.png)
+![haskell curry](../img/curry.png)
 
 Putting a space between two things is simply **function application**.
 The space is sort of like an operator and it has the highest precedence.
@@ -172,7 +172,7 @@ applyTwice :: (a -> a) -> a -> a
 applyTwice f x = f (f x)
 ~~~~
 
-![rocktopus](img/bonus.png)
+![rocktopus](../img/bonus.png)
 
 First of all, notice the type declaration. Before, we didn't need
 parentheses because -\> is naturally right-associative. However, here,
@@ -408,7 +408,7 @@ quicksort (x:xs) =
     in  smallerSorted ++ [x] ++ biggerSorted
 ~~~~
 
-![map](img/map.png)
+![map](../img/map.png)
 
 Mapping and filtering is the bread and butter of every functional
 programmer's toolbox. Uh. It doesn't matter if you do it with the map
@@ -565,7 +565,7 @@ So that's like writing (4\*) 5 or just 4 \* 5.
 Lambdas
 -------
 
-![lambda](img/lambda.png)
+![lambda](../img/lambda.png)
 
 Lambdas are basically anonymous functions that are used because we need
 some functions only once. Normally, we make a lambda with the sole
@@ -590,7 +590,7 @@ Lambdas are expressions, that's why we can just pass them like that. The
 expression (\\xs -\> length xs \> 15) returns a function that tells us
 whether the length of the list passed to it is greater than 15.
 
-![lamb](img/lamb.png)
+![lamb](../img/lamb.png)
 
 People who are not well acquainted with how currying and partial
 application works often use lambdas where they don't need to. For
@@ -657,7 +657,7 @@ passed on to a function as a parameter.
 Only folds and horses
 ---------------------
 
-![folded bird](img/origami.png)
+![folded bird](../img/origami.png)
 
 Back when we were dealing with recursion, we noticed a theme throughout
 many of the recursive functions that operated on lists. Usually, we'd
@@ -697,7 +697,7 @@ ghci> sum' [3,5,2,1]
 11
 ~~~~
 
-![foldl](img/foldl.png)
+![foldl](../img/foldl.png)
 
 Let's take an in-depth look into how this fold happens. \\acc x -\> acc
 + x is the binary function. 0 is the starting value and xs is the list
@@ -782,7 +782,7 @@ It would be map' f xs = foldl (\\acc x -\> acc ++ [f x]) [] xs, but the
 thing is that the ++ function is much more expensive than :, so we
 usually use right folds when we're building up new lists from a list.
 
-![fold this up!](img/washmachine.png)
+![fold this up!](../img/washmachine.png)
 
 If you reverse a list, you can do a right fold on it just like you would
 have done a left fold and vice versa. Sometimes you don't even have to
@@ -918,7 +918,7 @@ Alright, next up, we'll take a look at the \$ function, also called
 f $ x = f x
 ~~~~
 
-![dollar](img/dollar.png)
+![dollar](../img/dollar.png)
 
 What the heck? What is this useless operator? It's just function
 application! Well, almost, but not quite! Whereas normal function
@@ -959,7 +959,7 @@ Function composition
 --------------------
 
 In mathematics, function composition is defined like this:
-![ (f . g)(x) = f(g(x))](img/composition.png), meaning that
+![ (f . g)(x) = f(g(x))](../img/composition.png), meaning that
 composing two functions produces a new function that, when called with a
 parameter, say, *x* is the equivalent of calling *g* with the parameter
 *x* and then calling the *f* with that result.
@@ -972,7 +972,7 @@ function composition with the . function, which is defined like so:
 f . g = \x -> f (g x)
 ~~~~
 
-![notes](img/notes.png)
+![notes](../img/notes.png)
 
 Mind the type declaration. f must take as its parameter a value that has
 the same type as g's return value. So the resulting function takes a
