@@ -6,7 +6,7 @@ book for learning Haskell that I know of. I obtained this copy by using
 [Pandoc](http://johnmacfarlane.net/pandoc/).
 
 You can read the book [online](http://learnyouahaskell.com/chapters) or [buy a
-copy](http://nostarch.com/lyah.htm).
+copy](http://nostarch.com/lyah.htm). The author is Miran Lipovača.
 
 Description at learnyouahaskell.com
 -----------------------------------
