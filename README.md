@@ -1,7 +1,7 @@
 Learn You a _Haskell_ for Great Good!
 =====================================
 
-_ by Miran Lipovača._
+_by Miran Lipovača._
 
 This is my personal copy of “Learn You a Haskell for Great Good!”, the prettiest
 book for learning Haskell that I know of. I obtained this copy by using
