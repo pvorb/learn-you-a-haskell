@@ -1,12 +1,14 @@
 Learn You a _Haskell_ for Great Good!
 =====================================
 
+_ by Miran Lipovača._
+
 This is my personal copy of “Learn You a Haskell for Great Good!”, the prettiest
 book for learning Haskell that I know of. I obtained this copy by using
 [Pandoc](http://johnmacfarlane.net/pandoc/).
 
 You can read the book [online](http://learnyouahaskell.com/chapters) or [buy a
-copy](http://nostarch.com/lyah.htm). The author is Miran Lipovača.
+copy](http://nostarch.com/lyah.htm).
 
 Description at learnyouahaskell.com
 -----------------------------------
