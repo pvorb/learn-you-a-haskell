@@ -27,7 +27,7 @@ imperativer Programmierung (C, C++, Java, Python, …) gemacht haben, die aber
 noch nicht in funktionalen Programmiersprachen (Haskell, ML, OCaml, …)
 programmiert haben. Trotzdem wette ich, dass eine schlaue Person wie Sie,
 sollten Sie noch keine nennenswerte Programmiererfahrung gesammelt haben, in der
-Lage sein sollten, den Kapiteln zu folgen und Haskell zu lernen.
+Lage sein sollten, den Kapiteln zu folgen und Haskell zu erlernen.
 
 Der IRC-Channel \#haskell im Freenode-Netzwerk ist ein prima Ort, um Fragen zu
 stellen, wenn Sie nicht mehr weiterkommen. Die Leute sind dort wirklich nett,
