@@ -3,7 +3,7 @@
 cd en/
 
 pandoc --toc -S --epub-metadata=../metadata.xml \
-  -o ../learn-you-a-haskell-en.epub \
+  -o ../learn-you-a-haskell-en.docx ../title.txt \
   01-introduction.md \
   02-starting-out.md \
   03-types-and-typeclasses.md \
