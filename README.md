@@ -29,8 +29,9 @@ What is this repo for?
 ----------------------
 
 With the help of this repo, you can make your own ebook version of the book.
-Make sure you have Pandoc installed and then use the `epub.sh` and `pdf.sh`
-scripts.
+Make sure you have Pandoc installed and pdflatex (for making the pdf) and then 
+use 'make all', 'make epubs' or 'make pdfs' depending on what you want.
+The output will be written to a directory called 'out'
 
 License
 -------
