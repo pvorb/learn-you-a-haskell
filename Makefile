@@ -6,12 +6,18 @@ FILES=01-introduction.md 02-starting-out.md 03-types-and-typeclasses.md 04-synta
 all: epubs pdfs
 
 epubs: epub-en
-epub-en: out pandoc metadata.xml
+	-rm -rf en/img/
+
+epub-en: copyimg out pandoc metadata.xml
 	$(DOCGEN) $(DOCGEN_FLAGS) --epub-metadata=metadata.xml -o out/lyah-en.epub $(addprefix en/, $(FILES))
 
 pdfs: pdf-en
+
 pdf-en: out en pandoc pdflatex 
 	$(DOCGEN) $(DOCGEN_FLAGS) -o out/lyah-en.pdf $(addprefix en/, $(FILES))
+
+copyimg:
+	-cp -rf img/ en/
 
 out:
 	mkdir out
