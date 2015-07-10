@@ -5,7 +5,10 @@ body {
   font-size: medium;
 }
 code {
-  font-family: monospace;
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 0.88em;
+  line-height: 100%;
+  white-space: pre-line;
 }
 h1 {
   text-align: left;
@@ -35,6 +38,11 @@ ol.toc li {
   padding: 0;
 }
 pre {
-  white-space: pre-wrap;
-  /* CSS 3 */
+  margin: 10pt;
+}
+@font-face {
+  font-family: "Ubuntu Mono";
+  font-weight: normal;
+  font-style: normal;
+  src: url(UbuntuMono-Regular.otf);
 }
