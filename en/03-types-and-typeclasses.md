@@ -192,6 +192,8 @@ because a and b are different type variables, they don't have to be
 different types. It just states that the first component's type and the
 return value's type are the same.
 
+<a name="typeclasses-101"></a>
+
 Typeclasses 101
 ---------------
 

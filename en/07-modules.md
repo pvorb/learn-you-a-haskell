@@ -123,6 +123,8 @@ To search for functions or to find out where they're located, use
 search engine, you can search by name, module name or even type
 signature.
 
+<a name="data-list"></a>
+
 Data.List
 ---------
 

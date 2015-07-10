@@ -575,7 +575,7 @@ False
 ~~~~
 
 Those were a few basic functions that operate on lists. We'll take a
-look at more list functions [later](modules#data-list)
+look at more list functions [later](#data-list)
 
 Texas ranges
 ------------
@@ -670,6 +670,8 @@ ghci> take 10 (repeat 5)
 Although it's simpler to just use the replicate function if you want
 some number of the same element in a list. replicate 3 10 returns
 [10,10,10].
+
+<a name="im-a-list-comprehension"></a>
 
 I'm a list comprehension
 ------------------------

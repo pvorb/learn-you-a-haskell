@@ -607,7 +607,7 @@ Derived instances
 
 ![gob](img/gob.png)
 
-In the [Typeclasses 101](types-and-typeclasses#typeclasses-101) section,
+In the [Typeclasses 101](#typeclasses-101) section,
 we explained the basics of typeclasses. We explained that a typeclass is
 a sort of an interface that defines some behavior. A type can be made an
 *instance* of a typeclass if it supports that behavior. Example: the Int
@@ -861,6 +861,8 @@ ghci> [minBound .. maxBound] :: [Day]
 ~~~~
 
 That's pretty awesome.
+
+<a name="type-synonyms"></a>
 
 Type synonyms
 -------------
@@ -1126,6 +1128,8 @@ Right "QOTSA"
 We could have used a Maybe a to represent the result but then we
 wouldn't know why we couldn't get the code. But now, we have information
 about the failure in our result type.
+
+<a name="recursive-data-structures"></a>
 
 Recursive data structures
 -------------------------
@@ -1812,6 +1816,8 @@ ghci> yesnoIf (Just 500) "YEAH!" "NO!"
 ghci> yesnoIf Nothing "YEAH!" "NO!"
 "NO!"
 ~~~~
+
+<a name="the-functor-typeclass"></a>
 
 The Functor typeclass
 ---------------------

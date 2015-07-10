@@ -448,7 +448,7 @@ surprise that they can be used to focus on sub-lists of lists. After
 all, lists are pretty much like trees, only where a node in a tree has
 an element (or not) and several sub-trees, a node in a list has an
 element and only a single sub-list. When we [implemented our own
-lists](making-our-own-types-and-typeclasses#recursive-data-structures),
+lists](#recursive-data-structures),
 we defined our data type like so:
 
 ~~~~ {.haskell:hs name="code"}
@@ -864,7 +864,7 @@ gchi> let newFocus = (freeTree,[]) -: goLeft -: goRight
 But now, instead of returning Zipper a, they return Maybe (Zipper a), so
 chaining functions like this won't work. We had a similar problem when
 we were [dealing with our tightrope
-walker](a-fistful-of-monads#walk-the-line) in the chapter about monads.
+walker](#walk-the-line) in the chapter about monads.
 He also walked one step at a time and each of his steps could result in
 failure because a bunch of birds could land on one side of his balancing
 pole and make him fall.
