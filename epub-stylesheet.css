@@ -17,6 +17,9 @@ ol.toc li {
 pre {
   margin: 10pt;
 }
+#cover img {
+  width: 100%;
+}
 @font-face {
   font-family: "Ubuntu Mono";
   font-weight: normal;
