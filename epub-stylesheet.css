@@ -1,32 +1,9 @@
 /* This defines styles and classes used in the book */
-body {
-  margin: 5%;
-  text-align: justify;
-  font-size: medium;
-}
 code {
   font-family: "Ubuntu Mono", monospace;
   font-size: 0.88em;
   line-height: 100%;
   white-space: pre-line;
-}
-h1 {
-  text-align: left;
-}
-h2 {
-  text-align: left;
-}
-h3 {
-  text-align: left;
-}
-h4 {
-  text-align: left;
-}
-h5 {
-  text-align: left;
-}
-h6 {
-  text-align: left;
 }
 ol.toc {
   padding: 0;
