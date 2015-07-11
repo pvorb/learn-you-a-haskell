@@ -3,7 +3,7 @@ code {
   font-family: "Ubuntu Mono", monospace;
   font-size: 0.88em;
   line-height: 100%;
-  white-space: pre-line;
+  white-space: pre-wrap;
 }
 ol.toc {
   padding: 0;
