@@ -1315,7 +1315,7 @@ characters were used in both of them.
 
 ~~~~ {.haskell:ghci name="code"}
 text1 = "I just had an anime dream. Anime... Reality... Are they so different?"
-text2 = "The old man left his garbage can out and now his trash is all over my lawn!"
+text2 = "My neighbor left their garbage can out and now their trash is all over my lawn!"
 ~~~~
 
 The fromList function works much like you would expect. It takes a list
@@ -1327,7 +1327,7 @@ ghci> let set2 = Set.fromList text2
 ghci> set1
 fromList " .?AIRadefhijlmnorstuy"
 ghci> set2
-fromList " !Tabcdefghilmnorstuvwy"
+fromList " !Mabcdefghilmnorstuvwy"
 ~~~~
 
 As you can see, the items are ordered and each element is unique. Now
@@ -1346,7 +1346,7 @@ set but aren't in the second one and vice versa.
 ghci> Set.difference set1 set2
 fromList ".?AIRj"
 ghci> Set.difference set2 set1
-fromList "!Tbcgvw"
+fromList "!Mbcgvw"
 ~~~~
 
 Or we can see all the unique letters used in both sentences by using
@@ -1354,7 +1354,7 @@ union.
 
 ~~~~ {.haskell:ghci name="code"}
 ghci> Set.union set1 set2
-fromList " !.?AIRTabcdefghijlmnorstuvwy"
+fromList " !.?AIMRabcdefghijlmnorstuvwy"
 ~~~~
 
 The null, size, member, empty, singleton, insert and delete functions
