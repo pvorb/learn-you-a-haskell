@@ -1918,9 +1918,9 @@ a single value packed up in a Just, then we apply the function on the
 contents of the Just.
 
 ~~~~ {.haskell:hs name="code"}
-ghci> fmap (++ " HEY GUYS IM INSIDE THE JUST") (Just "Something serious.")
-Just "Something serious. HEY GUYS IM INSIDE THE JUST"
-ghci> fmap (++ " HEY GUYS IM INSIDE THE JUST") Nothing
+ghci> fmap (++ " HEY PEEPS IM INSIDE THE JUST") (Just "Something serious.")
+Just "Something serious. HEY PEEPS IM INSIDE THE JUST"
+ghci> fmap (++ " HEY PEEPS IM INSIDE THE JUST") Nothing
 Nothing
 ghci> fmap (*2) (Just 200)
 Just 400

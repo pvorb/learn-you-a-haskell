@@ -149,8 +149,8 @@ intercalate takes a list of lists and a list. It then inserts that list
 in between all those lists and then flattens the result.
 
 ~~~~ {.haskell:ghci name="code"}
-ghci> intercalate " " ["hey","there","guys"]
-"hey there guys"
+ghci> intercalate " " ["hey","there","friends"]
+"hey there friends"
 ghci> intercalate [0,0,0] [[1,2,3],[4,5,6],[7,8,9]]
 [1,2,3,0,0,0,4,5,6,0,0,0,7,8,9]
 ~~~~
@@ -161,8 +161,8 @@ a 2D matrix, the columns become the rows and vice versa.
 ~~~~ {.haskell:ghci name="code"}
 ghci> transpose [[1,2,3],[4,5,6],[7,8,9]]
 [[1,4,7],[2,5,8],[3,6,9]]
-ghci> transpose ["hey","there","guys"]
-["htg","ehu","yey","rs","e"]
+ghci> transpose ["hey","there","friends"]
+["htf","ehr","yei","re","en","d","s"]
 ~~~~
 
 Say we have the polynomials *3x^2^ + 5x + 9*, *10x^3^ + 9* and *8x^3^ +
@@ -244,9 +244,9 @@ ghci> any (==4) [2,3,5,6,1,4]
 True
 ghci> all (>4) [6,9,10]
 True
-ghci> all (`elem` ['A'..'Z']) "HEYGUYSwhatsup"
+ghci> all (`elem` ['A'..'Z']) "HEYFRIENDSwhatsup"
 False
-ghci> any (`elem` ['A'..'Z']) "HEYGUYSwhatsup"
+ghci> any (`elem` ['A'..'Z']) "HEYFRIENDSSwhatsup"
 True
 ~~~~
 
@@ -837,10 +837,10 @@ returns True only if that predicate holds for every element in the list.
 We can also use isSpace to simulate the Data.List function words.
 
 ~~~~ {.haskell:ghci name="code"}
-ghci> words "hey guys its me"
-["hey","guys","its","me"]
-ghci> groupBy ((==) `on` isSpace) "hey guys its me"
-["hey"," ","guys"," ","its"," ","me"]
+ghci> words "hey friends its me"
+["hey","friends","its","me"]
+ghci> groupBy ((==) `on` isSpace) "hey friends its me"
+["hey"," ","friends"," ","its"," ","me"]
 ghci>
 ~~~~
 
@@ -849,8 +849,8 @@ of only spaces. Hmm, whatever shall we do? I know, let's filter that
 sucker.
 
 ~~~~ {.haskell:ghci name="code"}
-ghci> filter (not . any isSpace) . groupBy ((==) `on` isSpace) $ "hey guys its me"
-["hey","guys","its","me"]
+ghci> filter (not . any isSpace) . groupBy ((==) `on` isSpace) $ "hey friends its me"
+["hey","friends","its","me"]
 ~~~~
 
 Ah.
