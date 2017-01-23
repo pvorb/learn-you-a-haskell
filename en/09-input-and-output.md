@@ -2164,7 +2164,7 @@ askForNumber gen = do
 
 We make a function askForNumber, which takes a random number generator
 and returns an I/O action that will prompt the user for a number and
-tell him if he guessed it right. In that function, we first generate a
+tell them if they guessed it right. In that function, we first generate a
 random number and a new generator based on the generator that we got as
 a parameter and call them randNumber and newGen. Let's say that the
 number generated was 7. Then we tell the user to guess which number

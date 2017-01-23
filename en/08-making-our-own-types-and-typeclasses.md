@@ -1051,10 +1051,10 @@ constructor while results use Right.
 An example: a high-school has lockers so that students have some place
 to put their Guns'n'Roses posters. Each locker has a code combination.
 When a student wants a new locker, they tell the locker supervisor which
-locker number they want and he gives them the code. However, if someone
-is already using that locker, he can't tell them the code for the locker
-and they have to pick a different one. We'll use a map from Data.Map to
-represent the lockers. It'll map from locker numbers to a pair of
+locker number they want and the supervisor gives them the code. However, if
+someone is already using that locker, the supervisor can't tell them the code
+for the locker and they have to pick a different one. We'll use a map from
+Data.Map to represent the lockers. It'll map from locker numbers to a pair of
 whether the locker is in use or not and the locker code.
 
 ~~~~ {.haskell:hs name="code"}
