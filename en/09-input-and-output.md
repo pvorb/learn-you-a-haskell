@@ -664,7 +664,7 @@ ghci> mapM_ print [1,2,3]
 forever takes an I/O action and returns an I/O action that just repeats
 the I/O action it got forever. It's located in Control.Monad. This
 little program will indefinitely ask the user for some input and spit it
-back to him, CAPSLOCKED:
+back to them, CAPSLOCKED:
 
 ~~~~ {.haskell:hs name="code"}
 import Control.Monad
@@ -784,7 +784,7 @@ Yeah, the haiku sucks, what of it? If anyone knows of any good haiku
 tutorials, let me know.
 
 Now, recall the little program we wrote when we were introducing the
-forever function. It prompted the user for a line, returned it to him in
+forever function. It prompted the user for a line, returned it to them in
 CAPSLOCK and then did that all over again, indefinitely. Just so you
 don't have to scroll all the way back, here it is again:
 
