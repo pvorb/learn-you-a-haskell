@@ -298,21 +298,25 @@ really nicely with patterns.
 
 Instead of explaining their syntax, let's just dive in and make a
 function using guards. We're going to make a simple function that
-berates you differently depending on your
-[BMI](http://en.wikipedia.org/wiki/Body_mass_index) (body mass index).
-Your BMI equals your weight divided by your height squared. If your BMI
-is less than 18.5, you're considered underweight. If it's anywhere from
-18.5 to 25 then you're considered normal. 25 to 30 is overweight and
-more than 30 is obese. So here's the function (we won't be calculating
-it right now, this function just gets a BMI and tells you off)
+advises you differently depending on your
+[Pog](https://en.wikipedia.org/wiki/Milk_caps_(game)) [Debt Ratio](https://en.wikipedia.org/wiki/Debt_ratio).
+Your Pog Debt Ratio equals your total liabilities (the number of you Pogs you
+owe your friends) divided by the number of
+[Slammers](https://en.wikipedia.org/wiki/Slammer_Whammers)
+you own. If your debt ratio is less than 2.0, you're doing awesome! If
+your debt ratio is between 2.0 and 5.0, you should consider playing Pogs
+in a different playground. If your debt ratio is between 5.0 and 10.0, please
+consider a new hobby (but we still think you're great!). If your debt ratio is
+larger than 10.0, you may want to consider changing your name, skipping town,
+and never mentioning pogs again.
 
 ~~~~ {.haskell:hs name="code"}
-bmiTell :: (RealFloat a) => a -> String
-bmiTell bmi
-    | bmi <= 18.5 = "You're underweight, you emo, you!"
-    | bmi <= 25.0 = "You're supposedly normal. Pffft, I bet you're ugly!"
-    | bmi <= 30.0 = "You're fat! Lose some weight, fatty!"
-    | otherwise   = "You're a whale, congratulations!"
+pogDebtRatioTell :: (RealFloat a) => a -> String
+pogDebtRatioTell ratio
+    | ratio <= 2.0  = "You're managing your f̶i̶n̶a̶n̶c̶e̶s̶ Pogs well!"
+    | ratio <= 5.0  = "You're borrowing too many pogs! Try another schoolyard!"
+    | ratio <= 10.0 = "Are pogs right for you (or your wallet)?"
+    | otherwise     = "You owe pogs all over town! Run away while you still can!"
 ~~~~
 
 Guards are indicated by pipes that follow a function's name and its
@@ -320,9 +324,9 @@ parameters. Usually, they're indented a bit to the right and lined up. A
 guard is basically a boolean expression. If it evaluates to True, then
 the corresponding function body is used. If it evaluates to False,
 checking drops through to the next guard and so on. If we call this
-function with 24.3, it will first check if that's smaller than or equal
-to 18.5. Because it isn't, it falls through to the next guard. The check
-is carried out with the second guard and because 24.3 is less than 25.0,
+function with 3.0, it will first check if that's smaller than or equal
+to 2.0. Because it isn't, it falls through to the next guard. The check
+is carried out with the second guard and because 3.0 is less than 5.0,
 the second string is returned.
 
 This is very reminiscent of a big if else tree in imperative languages,
@@ -341,27 +345,27 @@ guards play nicely together. If no suitable guards or patterns are
 found, an error is thrown.
 
 Of course we can use guards with functions that take as many parameters
-as we want. Instead of having the user calculate his own BMI before
-calling the function, let's modify this function so that it takes a
-height and weight and calculates it for us.
+as we want. Instead of having the user calculate their own ratio before
+calling the function, let's modify this function so that it takes the
+pogs owed and the number of slammers and calculates it for us.
 
 ~~~~ {.haskell:hs name="code"}
-bmiTell :: (RealFloat a) => a -> a -> String
-bmiTell weight height
-    | weight / height ^ 2 <= 18.5 = "You're underweight, you emo, you!"
-    | weight / height ^ 2 <= 25.0 = "You're supposedly normal. Pffft, I bet you're ugly!"
-    | weight / height ^ 2 <= 30.0 = "You're fat! Lose some weight, fatty!"
-    | otherwise                 = "You're a whale, congratulations!"
+pogDebtRatioTell :: (RealFloat a) => a -> a -> String
+pogDebtRatioTell pogsOwed slammers
+    | pogsOwed / slammers <= 2.0  = "You're managing your f̶i̶n̶a̶n̶c̶e̶s̶ Pogs well!"
+    | pogsOwed / slammers <= 5.0  = "You're borrowing too many pogs! Try another schoolyard!"
+    | pogsOwed / slammers <= 10.0 = "Are pogs right for you (or your wallet)?"
+    | otherwise                   = "You owe pogs all over town! Run away while you still can!"
 ~~~~
 
-Let's see if I'm fat ...
+Let's see how I'm managing my pogs...
 
 ~~~~ {.haskell:ghci name="code"}
-ghci> bmiTell 85 1.90
-"You're supposedly normal. Pffft, I bet you're ugly!"
+ghci> bmiTell 10 7
+"You're managing your f̶i̶n̶a̶n̶c̶e̶s̶ Pogs well!"
 ~~~~
 
-Yay! I'm not fat! But Haskell just called me ugly. Whatever!
+Yay! I'm winning a pogs! Thanks Haskell!
 
 Note that there's no = right after the function name and its parameters,
 before the first guard. Many newbies get syntax errors because they
@@ -410,17 +414,16 @@ way.
 Where!?
 -------
 
-In the previous section, we defined a BMI calculator function and
-berator like this:
+In the previous section, we defined a Pog Debt Ratio advice-giver
+like this:
 
 ~~~~ {.haskell:hs name="code"}
-bmiTell :: (RealFloat a) => a -> a -> String
-bmiTell weight height
-    | weight / height ^ 2 <= 18.5 = "You're underweight, you emo, you!"
-    | weight / height ^ 2 <= 25.0 = "You're supposedly normal. Pffft, I bet you're ugly!"
-    | weight / height ^ 2 <= 30.0 = "You're fat! Lose some weight, fatty!"
-    | otherwise                   = "You're a whale, congratulations!"
-~~~~
+pogDebtRatioTell :: (RealFloat a) => a -> a -> String
+pogDebtRatioTell pogsOwed slammers
+    | pogsOwed / slammers <= 2.0  = "You're managing your f̶i̶n̶a̶n̶c̶e̶s̶ Pogs well!"
+    | pogsOwed / slammers <= 5.0  = "You're borrowing too many pogs! Try another schoolyard!"
+    | pogsOwed / slammers <= 10.0 = "Are pogs right for you (or your wallet)?"
+    | otherwise                   = "You owe pogs all over town! Run away while you still can!"~~~~
 
 Notice that we repeat ourselves here three times. We repeat ourselves
 three times. Repeating yourself (three times) while programming is about
@@ -430,13 +433,13 @@ bind it to a name and then use that name instead of the expression.
 Well, we can modify our function like this:
 
 ~~~~ {.haskell:hs name="code"}
-bmiTell :: (RealFloat a) => a -> a -> String
-bmiTell weight height
-    | bmi <= 18.5 = "You're underweight, you emo, you!"
-    | bmi <= 25.0 = "You're supposedly normal. Pffft, I bet you're ugly!"
-    | bmi <= 30.0 = "You're fat! Lose some weight, fatty!"
-    | otherwise   = "You're a whale, congratulations!"
-    where bmi = weight / height ^ 2
+pogDebtRatioTell :: (RealFloat a) => a -> a -> String
+pogDebtRatioTell pogsOwed slammers
+    | ratio <= 2.0  = "You're managing your f̶i̶n̶a̶n̶c̶e̶s̶ Pogs well!"
+    | ratio <= 5.0  = "You're borrowing too many pogs! Try another schoolyard!"
+    | ratio <= 10.0 = "Are pogs right for you (or your wallet)?"
+    | otherwise     = "You owe pogs all over town! Run away while you still can!"
+    where ratio = pogsOwed / slammers
 ~~~~
 
 We put the keyword where after the guards (usually it's best to indent
@@ -450,16 +453,16 @@ only once. We could go a bit overboard and present our function like
 this:
 
 ~~~~ {.haskell:hs name="code"}
-bmiTell :: (RealFloat a) => a -> a -> String
-bmiTell weight height
-    | bmi <= skinny = "You're underweight, you emo, you!"
-    | bmi <= normal = "You're supposedly normal. Pffft, I bet you're ugly!"
-    | bmi <= fat    = "You're fat! Lose some weight, fatty!"
-    | otherwise     = "You're a whale, congratulations!"
-    where bmi = weight / height ^ 2
-          skinny = 18.5
-          normal = 25.0
-          fat = 30.0
+pogDebtRatioTell :: (RealFloat a) => a -> a -> String
+pogDebtRatioTell pogsOwed slammers
+    | ratio <= great   = "You're managing your f̶i̶n̶a̶n̶c̶e̶s̶ Pogs well!"
+    | ratio <= okay    = "You're borrowing too many pogs! Try another schoolyard!"
+    | ratio <= worried = "Are pogs right for you (or your wallet)?"
+    | otherwise        = "You owe pogs all over town! Run away while you still can!"
+    where ratio = pogsOwed / slammers
+          great = 2.0
+          okay = 5.0
+          worried = 10.0
 ~~~~
 
 The names we define in the where section of a function are only visible
@@ -478,8 +481,8 @@ rewritten the where section of our previous function as:
 
 ~~~~ {.haskell:hs name="code"}
     ...
-    where bmi = weight / height ^ 2
-          (skinny, normal, fat) = (18.5, 25.0, 30.0)
+    where ratio = pogsOwed / slammers
+          (great, okay, worried) = (2.0, 5.0, 10.0)
 ~~~~
 
 Let's make another fairly trivial function where we get a first and a
@@ -498,13 +501,13 @@ just goes to show that it's possible to do it in where bindings as well.
 
 Just like we've defined constants in where blocks, you can also define
 functions. Staying true to our healthy programming theme, let's make a
-function that takes a list of weight-height pairs and returns a list of
-BMIs.
+function that takes a list of pogsOwed-slammer pairs and returns a list of
+debt ratios.
 
 ~~~~ {.haskell:hs name="code"}
-calcBmis :: (RealFloat a) => [(a, a)] -> [a]
-calcBmis xs = [bmi w h | (w, h) <- xs]
-    where bmi weight height = weight / height ^ 2
+calcDebts :: (RealFloat a) => [(a, a)] -> [a]
+calcDebts xs = [debt w h | (w, h) <- xs]
+    where debt pogs slammers = pogs / slammers
 ~~~~
 
 And that's all there is to it! The reason we had to introduce bmi as a
