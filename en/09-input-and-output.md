@@ -1633,7 +1633,7 @@ First, we get the arguments and bind them to (command:args). If you
 remember your pattern matching, this means that the first argument will
 get bound to command and the rest of them will get bound to args. If we
 call our program like todo add todo.txt "Spank the monkey", command will
-be "add" and args will be ["todo.xt", "Spank the monkey"].
+be "add" and args will be ["todo.txt", "Spank the monkey"].
 
 In the next line, we look up our command in the dispatch list. Because
 "add" points to add, we get Just add as a result. We use pattern
