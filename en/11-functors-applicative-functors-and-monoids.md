@@ -169,7 +169,7 @@ E-R-E-H-T- -O-L-L-E-H
 ~~~~
 
 As you probably know, intersperse '-' . reverse . map toUpper is a
-function that takes a string, maps toUpper over it, the applies reverse
+function that takes a string, maps toUpper over it, then applies reverse
 to that result and then applies intersperse '-' to that result. It's
 like writing (\\xs -\> intersperse '-' (reverse (map toUpper xs))), only
 prettier.
