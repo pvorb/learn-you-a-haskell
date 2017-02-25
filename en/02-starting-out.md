@@ -195,7 +195,7 @@ doubleMe x = x + x
 ~~~~
 
 Functions are defined in a similar way that they are called. The
-function name is followed by parameters seperated by spaces. But when
+function name is followed by parameters separated by spaces. But when
 defining functions, there's a `=` and after that we define what the
 function does. Save this as `baby.hs` or something. Now navigate to where
 it's saved and run `ghci` from there. Once inside GHCI, do `:l baby`. Now
@@ -963,7 +963,7 @@ them into a triple. If you evaluate that by typing out `triangles` in
 GHCI, you'll get a list of all possible triangles with sides under or
 equal to 10. Next, we'll add a condition that they all have to be right
 triangles. We'll also modify this function by taking into consideration
-that side b isn't larger than the hypothenuse and that side a isn't
+that side b isn't larger than the hypotenuse and that side a isn't
 larger than side b.
 
 ~~~~ {.haskell: .ghci name="code"}

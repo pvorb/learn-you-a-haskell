@@ -593,7 +593,7 @@ ghci> nub "Lots of words and stuff"
 "Lots fwrdanu"
 ~~~~
 
-`delete` takes an element and a list and deletes the first occurence of
+`delete` takes an element and a list and deletes the first occurrence of
 that element in the list.
 
 ~~~~ {.haskell:ghci name="code"}
@@ -802,7 +802,7 @@ instance, are not printable.
 `isLetter` checks whether a character is a letter.
 
 `isMark` checks for Unicode mark characters. Those are characters that
-combine with preceding letters to form latters with accents. Use this if
+combine with preceding letters to form letters with accents. Use this if
 you are French.
 
 `isNumber` checks whether a character is numeric.
@@ -1506,7 +1506,7 @@ Pretty standard geometry right here. There are a few things to take note
 of though. Because a cube is only a special case of a cuboid, we defined
 its area and volume by treating it as a cuboid whose sides are all of
 the same length. We also defined a helper function called `rectangleArea`,
-which calculates a rectangle's area based on the lenghts of its sides.
+which calculates a rectangle's area based on the lengths of its sides.
 It's rather trivial because it's just multiplication. Notice that we
 used it in our functions in the module (namely `cuboidArea` and
 `cuboidVolume`) but we didn't export it! Because we want our module to

@@ -682,7 +682,7 @@ it. If you remember, break takes a predicate and a list and returns a
 pair of lists. The first list in the pair holds items for which the
 predicate returns False. Then, once the predicate returns True for an
 item, it places that item and the rest of the list in the second item of
-the pair. We made an auxilliary function called nameIs that takes a name
+the pair. We made an auxiliary function called nameIs that takes a name
 and a file system item and returns True if the names match.
 
 So now, ls is a list that contains the items that precede the item that

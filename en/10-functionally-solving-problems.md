@@ -173,7 +173,7 @@ any type that's part of the Num and Read typeclasses (like Int, Float,
 etc.).
 
 For the list of items ["2","3","+"], our function will start folding
-from the left. The intial stack will be []. It will call the folding
+from the left. The initial stack will be []. It will call the folding
 function with [] as the stack (accumulator) and "2" as the item. Because
 that item is not an operator, it will be read and the added to the
 beginning of []. So the new stack is now [2] and the folding function
@@ -458,7 +458,7 @@ type RoadSystem = [Section]
 
 This is pretty much perfect! It's as simple as it goes and I have a
 feeling it'll work perfectly for implementing our solution. Section is a
-simple algebraic data type that holds three integers for the lenghts of
+simple algebraic data type that holds three integers for the lengths of
 its three road parts. We introduce a type synonym as well, saying that
 RoadSystem is a list of sections.
 

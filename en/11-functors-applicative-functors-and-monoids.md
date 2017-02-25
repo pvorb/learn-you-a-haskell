@@ -178,7 +178,7 @@ Another instance of Functor that we've been dealing with all along but
 didn't know was a Functor is (-\>) r. You're probably slightly confused
 now, since what the heck does (-\>) r mean? The function type r -\> a
 can be rewritten as (-\>) r a, much like we can write 2 + 3 as (+) 2 3.
-When we look at it as (-\>) r a, we can see (-\>) in a slighty different
+When we look at it as (-\>) r a, we can see (-\>) in a slightly different
 light, because we see that it's just a type constructor that takes two
 type parameters, just like Either. But remember, we said that a type
 constructor has to take exactly one type parameter so that it can be
@@ -477,7 +477,7 @@ CJust 100 [1,2,3]
 If we use the CNothing constructor, there are no fields, and if we use
 the CJust constructor, the first field is an integer and the second
 field can be any type. Let's make this an instance of Functor so that
-everytime we use fmap, the function gets applied to the second field,
+every time we use fmap, the function gets applied to the second field,
 whereas the first field gets increased by 1.
 
 ~~~~ {.haskell:hs name="code"}
@@ -780,7 +780,7 @@ doing pure f \<\*\> x \<\*\> y \<\*\> ... allow us to take a function
 that expects parameters that aren't necessarily wrapped in functors and
 use that function to operate on several values that are in functor
 contexts. The function can take as many parameters as we want, because
-it's always partially applied step by step between occurences of \<\*\>.
+it's always partially applied step by step between occurrences of \<\*\>.
 
 This becomes even more handy and apparent if we consider the fact that
 pure f \<\*\> x equals fmap f x. This is one of the applicative laws.
@@ -847,7 +847,7 @@ that applicative functors are all about Maybe. There are loads of other
 instances of Applicative, so let's go and meet them!
 
 Lists (actually the list type constructor, []) are applicative functors.
-What a suprise! Here's how [] is an instance of Applicative:
+What a surprise! Here's how [] is an instance of Applicative:
 
 ~~~~ {.haskell:hs name="code"}
 instance Applicative [] where
@@ -1357,7 +1357,7 @@ list of booleans. It turns a list with the type (Num a) =\> [a -\> Bool]
 into a function with the type (Num a) =\> a -\> [Bool]. Pretty neat,
 huh?
 
-Because lists are homogenous, all the functions in the list have to be
+Because lists are homogeneous, all the functions in the list have to be
 functions of the same type, of course. You can't have a list like [ord,
 (+3)], because ord takes a character and returns a number, whereas (+3)
 takes a number and returns a number.
@@ -1693,9 +1693,9 @@ this means.
 
 Like we've said before, Haskell is lazy by default, which means that
 only when we try to actually print the results of our functions will any
-computation take place. Furthemore, only those computations that are
+computation take place. Furthermore, only those computations that are
 necessary for our function to tell us the result will get carried out.
-The undefined value in Haskell represents an erronous computation. If we
+The undefined value in Haskell represents an erroneous computation. If we
 try to evaluate it (that is, force Haskell to actually compute it) by
 printing it to the terminal, Haskell will throw a hissy fit (technically
 referred to as an exception):
@@ -2054,7 +2054,7 @@ able to use the general type of [a] (as opposed to specifying [Int] or
 Because mconcat has a default implementation, we get it for free when we
 make something an instance of Monoid. In the case of the list, mconcat
 turns out to be just concat. It takes a list of lists and flattens it,
-because that's the equivalent of doing ++ between all the adjecent lists
+because that's the equivalent of doing ++ between all the adjacent lists
 in a list.
 
 The monoid laws do indeed hold for the list instance. When we have
@@ -2550,7 +2550,7 @@ We said that a tree is either an empty tree that doesn't hold any values
 or it's a node that holds one value and also two other trees. After
 defining it, we made it an instance of Functor and with that we gained
 the ability to fmap functions over it. Now, we're going to make it an
-instance of Foldable so that we get the abilty to fold it up. One way to
+instance of Foldable so that we get the ability to fold it up. One way to
 make a type constructor an instance of Foldable is to just directly
 implement foldr for it. But another, often much easier way, is to
 implement the foldMap function, which is also a part of the Foldable

@@ -2189,7 +2189,7 @@ Okay, so 3 has a one out of two chance of happening while 5 and 9 will
 happen one time out of four. Pretty neat.
 
 We took lists and we added some extra context to them, so this
-represents values withs contexts too. Before we go any further, let's
+represents values with contexts too. Before we go any further, let's
 wrap this into a newtype because something tells me we'll be making some
 instances.
 
