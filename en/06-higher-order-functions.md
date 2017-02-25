@@ -387,7 +387,7 @@ ghci> filter (`elem` ['A'..'Z']) "i lauGh At You BecAuse u r aLL the Same"
 "GAYBALLS"
 ~~~~
 
-All of this could also be achived with list comprehensions by the use of
+All of this could also be achieved with list comprehensions by the use of
 predicates. There's no set rule for when to use map and filter versus
 using list comprehension, you just have to decide what's more readable
 depending on the code and the context. The filter equivalent of applying
