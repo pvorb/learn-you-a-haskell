@@ -1,7 +1,7 @@
 /* This defines styles and classes used in the book */
 code {
   font-family: "Ubuntu Mono", monospace;
-  font-size: 0.88em;
+  font-size: 1em;
   line-height: 100%;
   white-space: pre-wrap;
 }

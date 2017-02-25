@@ -736,7 +736,7 @@ Reader? Ugh, not this joke again.
 
 ![bang youre dead](img/revolver.png)
 
-In the [chapte about
+In the [chapter about
 applicatives](#functors-applicative-functors-and-monoids), we saw that
 the function type, (-\>) r is an instance of Functor. Mapping a function
 f over a function g will make a function that takes the same thing as g,
