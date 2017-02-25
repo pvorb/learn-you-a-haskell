@@ -504,7 +504,7 @@ right. What does that sound like? Ding, ding, ding! That's right, A LEFT
 FOLD!
 
 When doing the solution by hand, there was a step that we repeated over
-and over again. It involed checking the optimal paths on A and B so far
+and over again. It involved checking the optimal paths on A and B so far
 and the current section to produce the new optimal paths on A and B. For
 instance, at the beginning the optimal paths were [] and [] for A and B
 respectively. We examined the section Section 50 10 30 and concluded
