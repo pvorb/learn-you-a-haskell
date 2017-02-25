@@ -40,8 +40,8 @@ declare what something is.
 Maximum awesome
 ---------------
 
-The maximum function takes a list of things that can be ordered (e.g.
-instances of the Ord typeclass) and returns the biggest of them. Think
+The `maximum` function takes a list of things that can be ordered (e.g.
+instances of the `Ord` typeclass) and returns the biggest of them. Think
 about how you'd implement that in an imperative fashion. You'd probably
 set up a variable to hold the maximum value so far and then you'd loop
 through the elements of a list and if an element is bigger than then the
@@ -78,26 +78,26 @@ element.
 Now the third pattern is where the action happens. We use pattern
 matching to split a list into a head and a tail. This is a very common
 idiom when doing recursion with lists, so get used to it. We use a
-*where* binding to define maxTail as the maximum of the rest of the
+*where* binding to define `maxTail` as the maximum of the rest of the
 list. Then we check if the head is greater than the maximum of the rest
 of the list. If it is, we return the head. Otherwise, we return the
 maximum of the rest of the list.
 
 Let's take an example list of numbers and check out how this would work
-on them: [2,5,1]. If we call maximum' on that, the first two patterns
-won't match. The third one will and the list is split into 2 and [5,1].
-The *where* clause wants to know the maximum of [5,1], so we follow that
-route. It matches the third pattern again and [5,1] is split into 5 and
-[1]. Again, the where clause wants to know the maximum of [1]. Because
-that's the edge condition, it returns 1. Finally! So going up one step,
-comparing 5 to the maximum of [1] (which is 1), we obviously get back 5.
-So now we know that the maximum of [5,1] is 5. We go up one step again
-where we had 2 and [5,1]. Comparing 2 with the maximum of [5,1], which
-is 5, we choose 5.
+on them: `[2,5,1]`. If we call `maximum'` on that, the first two patterns
+won't match. The third one will and the list is split into `2` and `[5,1]`.
+The *where* clause wants to know the maximum of `[5,1]`, so we follow that
+route. It matches the third pattern again and `[5,1]` is split into `5` and
+`[1]`. Again, the `where` clause wants to know the maximum of `[1]`. Because
+that's the edge condition, it returns `1`. Finally! So going up one step,
+comparing `5` to the maximum of `[1]` (which is `1`), we obviously get back `5`.
+So now we know that the maximum of `[5,1]` is `5`. We go up one step again
+where we had `2` and `[5,1]`. Comparing `2` with the maximum of `[5,1]`, which
+is `5`, we choose `5`.
 
-An even clearer way to write this function is to use max. If you
-remember, max is a function that takes two numbers and returns the
-bigger of them. Here's how we could rewrite maximum' by using max:
+An even clearer way to write this function is to use `max`. If you
+remember, `max` is a function that takes two numbers and returns the
+bigger of them. Here's how we could rewrite `maximum'` by using `max`:
 
 ~~~~ {.haskell:hs name="code"}
 maximum' :: (Ord a) => [a] -> a
@@ -115,10 +115,10 @@ A few more recursive functions
 ------------------------------
 
 Now that we know how to generally think recursively, let's implement a
-few functions using recursion. First off, we'll implement replicate.
-replicate takes an Int and some element and returns a list that has
-several repetitions of the same element. For instance, replicate 3 5
-returns [5,5,5]. Let's think about the edge condition. My guess is that
+few functions using recursion. First off, we'll implement `replicate`.
+`replicate` takes an `Int` and some element and returns a list that has
+several repetitions of the same element. For instance, `replicate 3 5`
+returns `[5,5,5]`. Let's think about the edge condition. My guess is that
 the edge condition is 0 or less. If we try to replicate something zero
 times, it should return an empty list. Also for negative numbers,
 because it doesn't really make sense.
@@ -131,18 +131,18 @@ replicate' n x
 ~~~~
 
 We used guards here instead of patterns because we're testing for a
-boolean condition. If n is less than or equal to 0, return an empty
-list. Otherwise return a list that has x as the first element and then x
-replicated n-1 times as the tail. Eventually, the (n-1) part will cause
+boolean condition. If `n` is less than or equal to 0, return an empty
+list. Otherwise return a list that has `x` as the first element and then `x`
+replicated n-1 times as the tail. Eventually, the `(n-1)` part will cause
 our function to reach the edge condition.
 
-*Note:* Num is not a subclass of Ord. That means that what constitutes
+*Note:* `Num` is not a subclass of `Ord`. That means that what constitutes
 for a number doesn't really have to adhere to an ordering. So that's why
-we have to specify both the Num and Ord class constraints when doing
+we have to specify both the `Num` and `Ord` class constraints when doing
 addition or subtraction and also comparison.
 
-Next up, we'll implement take. It takes a certain number of elements
-from a list. For instance, take 3 [5,4,3,2,1] will return [5,4,3]. If we
+Next up, we'll implement `take`. It takes a certain number of elements
+from a list. For instance, `take 3 [5,4,3,2,1]` will return `[5,4,3]`. If we
 try to take 0 or less elements from a list, we get an empty list. Also
 if we try to take anything from an empty list, we get an empty list.
 Notice that those are two edge conditions right there. So let's write
@@ -159,19 +159,19 @@ take' n (x:xs) = x : take' (n-1) xs
 ![painter](img/painter.png)
 
 The first pattern specifies that if we try to take a 0 or negative
-number of elements, we get an empty list. Notice that we're using \_ to
+number of elements, we get an empty list. Notice that we're using `_` to
 match the list because we don't really care what it is in this case.
-Also notice that we use a guard, but without an otherwise part. That
-means that if n turns out to be more than 0, the matching will fall
+Also notice that we use a guard, but without an `otherwise` part. That
+means that if `n` turns out to be more than 0, the matching will fall
 through to the next pattern. The second pattern indicates that if we try
 to take anything from an empty list, we get an empty list. The third
 pattern breaks the list into a head and a tail. And then we state that
-taking n elements from a list equals a list that has x as the head and
-then a list that takes n-1 elements from the tail as a tail. Try using a
+taking `n` elements from a list equals a list that has `x` as the head and
+then a list that takes `n-1` elements from the tail as a tail. Try using a
 piece of paper to write down how the evaluation would look like if we
-try to take, say, 3 from [4,3,2,1].
+try to take, say, 3 from `[4,3,2,1]`.
 
-reverse simply reverses a list. Think about the edge condition. What is
+`reverse` simply reverses a list. Think about the edge condition. What is
 it? Come on ... it's the empty list! An empty list reversed equals the
 empty list itself. O-kay. What about the rest of it? Well, you could say
 that if we split a list to a head and a tail, the reversed list is equal
@@ -189,7 +189,7 @@ Because Haskell supports infinite lists, our recursion doesn't really
 have to have an edge condition. But if it doesn't have it, it will
 either keep churning at something infinitely or produce an infinite data
 structure, like an infinite list. The good thing about infinite lists
-though is that we can cut them where we want. repeat takes an element
+though is that we can cut them where we want. `repeat` takes an element
 and returns an infinite list that just has that element. A recursive
 implementation of that is really easy, watch.
 
@@ -198,18 +198,18 @@ repeat' :: a -> [a]
 repeat' x = x:repeat' x
 ~~~~
 
-Calling repeat 3 will give us a list that starts with 3 and then has an
-infinite amount of 3's as a tail. So calling repeat 3 would evaluate
-like 3:repeat 3, which is 3:(3:repeat 3), which is 3:(3:(3:repeat 3)),
-etc. repeat 3 will never finish evaluating, whereas take 5 (repeat 3)
+Calling `repeat 3` will give us a list that starts with `3` and then has an
+infinite amount of 3's as a tail. So calling `repeat 3` would evaluate
+like `3:repeat 3`, which is `3:(3:repeat 3)`, which is `3:(3:(3:repeat 3))`,
+etc. `repeat 3` will never finish evaluating, whereas `take 5 (repeat 3)`
 will give us a list of five 3's. So essentially it's like doing
-replicate 5 3.
+`replicate 5 3`.
 
-zip takes two lists and zips them together. zip [1,2,3] [2,3] returns
-[(1,2),(2,3)], because it truncates the longer list to match the length
+`zip` takes two lists and zips them together. `zip [1,2,3] [2,3]` returns
+`[(1,2),(2,3)]`, because it truncates the longer list to match the length
 of the shorter one. How about if we zip something with an empty list?
 Well, we get an empty list back then. So there's our edge condition.
-However, zip takes two lists as parameters, so there are actually two
+However, `zip` takes two lists as parameters, so there are actually two
 edge conditions.
 
 ~~~~ {.haskell:hs name="code"}
@@ -222,11 +222,11 @@ zip' (x:xs) (y:ys) = (x,y):zip' xs ys
 First two patterns say that if the first list or second list is empty,
 we get an empty list. The third one says that two lists zipped are equal
 to pairing up their heads and then tacking on the zipped tails. Zipping
-[1,2,3] and ['a','b'] will eventually try to zip [3] with []. The edge
-condition patterns kick in and so the result is (1,'a'):(2,'b'):[],
-which is exactly the same as [(1,'a'),(2,'b')].
+`[1,2,3]` and `['a','b']` will eventually try to zip `[3]` with `[]`. The edge
+condition patterns kick in and so the result is `(1,'a'):(2,'b'):[]`,
+which is exactly the same as `[(1,'a'),(2,'b')]`.
 
-Let's implement one more standard library function — elem. It takes an
+Let's implement one more standard library function — `elem`. It takes an
 element and a list and sees if that element is in the list. The edge
 condition, as is most of the times with lists, is the empty list. We
 know that an empty list contains no elements, so it certainly doesn't
@@ -241,13 +241,13 @@ elem' a (x:xs)
 ~~~~
 
 Pretty simple and expected. If the head isn't the element then we check
-the tail. If we reach an empty list, the result is False.
+the tail. If we reach an empty list, the result is `False`.
 
 Quick, sort!
 ------------
 
 We have a list of items that can be sorted. Their type is an instance of
-the Ord typeclass. And now, we want to sort them! There's a very cool
+the `Ord` typeclass. And now, we want to sort them! There's a very cool
 algoritm for sorting called quicksort. It's a very clever way of sorting
 items. While it takes upwards of 10 lines to implement quicksort in
 imperative languages, the implementation is much shorter and elegant in
@@ -258,8 +258,9 @@ showcase how elegant Haskell is.
 
 ![quickman](img/quickman.png)
 
-So, the type signature is going to be quicksort :: (Ord a) =\> [a] -\>
-[a]. No surprises there. The edge condition? Empty list, as is expected.
+So, the type signature is going to be
+`quicksort :: (Ord a) => [a] -> [a]`.
+No surprises there. The edge condition? Empty list, as is expected.
 A sorted empty list is an empty list. Now here comes the main algorithm:
 *a sorted list is a list that has all the values smaller than (or equal
 to) the head of the list in front (and those values are sorted), then
@@ -292,12 +293,12 @@ ghci> quicksort "the quick brown fox jumps over the lazy dog"
 ~~~~
 
 Booyah! That's what I'm talking about! So if we have, say
-[5,1,9,4,6,7,3] and we want to sort it, this algorithm will first take
-the head, which is 5 and then put it in the middle of two lists that are
-smaller and bigger than it. So at one point, you'll have [1,4,3] ++ [5]
-++ [9,6,7]. We know that once the list is sorted completely, the number
-5 will stay in the fourth place since there are 3 numbers lower than it
-and 3 numbers higher than it. Now, if we sort [1,4,3] and [9,6,7], we
+`[5,1,9,4,6,7,3]` and we want to sort it, this algorithm will first take
+the head, which is `5` and then put it in the middle of two lists that are
+smaller and bigger than it. So at one point, you'll have
+`[1,4,3] ++ [5] ++ [9,6,7]`. We know that once the list is sorted completely,
+the number `5` will stay in the fourth place since there are 3 numbers lower
+than it and 3 numbers higher than it. Now, if we sort `[1,4,3]` and `[9,6,7]`, we
 have a sorted list! We sort the two lists using the same function.
 Eventually, we'll break it up so much that we reach empty lists and an
 empty list is already sorted in a way, by virtue of being empty. Here's

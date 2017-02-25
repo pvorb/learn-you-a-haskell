@@ -24,13 +24,13 @@ lucky 7 = "LUCKY NUMBER SEVEN!"
 lucky x = "Sorry, you're out of luck, pal!"
 ~~~~
 
-When you call lucky, the patterns will be checked from top to bottom and
+When you call `lucky`, the patterns will be checked from top to bottom and
 when it conforms to a pattern, the corresponding function body will be
 used. The only way a number can conform to the first pattern here is if
 it is 7. If it's not, it falls through to the second pattern, which
-matches anything and binds it to x. This function could have also been
+matches anything and binds it to `x`. This function could have also been
 implemented by using an if statement. But what if we wanted a function
-that says the numbers from 1 to 5 and says "Not between 1 and 5" for any
+that says the numbers from 1 to 5 and says `"Not between 1 and 5"` for any
 other number? Without pattern matching, we'd have to make a pretty
 convoluted if then else tree. However, with it:
 
@@ -45,12 +45,12 @@ sayMe x = "Not between 1 and 5"
 ~~~~
 
 Note that if we moved the last pattern (the catch-all one) to the top,
-it would always say "Not between 1 and 5", because it would catch all
+it would always say `"Not between 1 and 5"`, because it would catch all
 the numbers and they wouldn't have a chance to fall through and be
 checked for any other patterns.
 
 Remember the factorial function we implemented previously? We defined
-the factorial of a number n as product [1..n]. We can also define a
+the factorial of a number `n` as `product [1..n]`. We can also define a
 factorial function *recursively*, the way it is usually defined in
 mathematics. We start by saying that the factorial of 0 is 1. Then we
 state that the factorial of any positive integer is that integer
@@ -66,12 +66,13 @@ factorial n = n * factorial (n - 1)
 This is the first time we've defined a function recursively. Recursion
 is important in Haskell and we'll take a closer look at it later. But in
 a nutshell, this is what happens if we try to get the factorial of, say,
-3. It tries to compute 3 \* factorial 2. The factorial of 2 is 2 \*
-factorial 1, so for now we have 3 \* (2 \* factorial 1). factorial 1 is
-1 \* factorial 0, so we have 3 \* (2 \* (1 \* factorial 0)). Now here
-comes the trick — we've defined the factorial of 0 to be just 1 and
+3. It tries to compute `3 * factorial 2`. The factorial of 2 is
+`2 * factorial 1`, so for now we have `3 * (2 * factorial 1)`.
+`factorial 1` is `1 * factorial 0`, so we have
+`3 * (2 * (1 * factorial 0))`. Now here comes the trick — we've defined
+the factorial of 0 to be just 1 and
 because it encounters that pattern before the catch-all one, it just
-returns 1. So the final result is equivalent to 3 \* (2 \* (1 \* 1)).
+returns 1. So the final result is equivalent to `3 * (2 * (1 * 1))`.
 Had we written the second pattern on top of the first one, it would
 catch all numbers, including 0 and our calculation would never
 terminate. That's why order is important when specifying patterns and
@@ -123,11 +124,12 @@ addVectors (x1, y1) (x2, y2) = (x1 + x2, y1 + y2)
 ~~~~
 
 There we go! Much better. Note that this is already a catch-all pattern.
-The type of addVectors (in both cases) is addVectors :: (Num a) =\> (a,
-a) -\> (a, a) - \> (a, a), so we are guaranteed to get two pairs as
+The type of `addVectors` (in both cases) is
+`addVectors :: (Num a) => (a, a) -> (a, a) -> (a, a)`,
+so we are guaranteed to get two pairs as
 parameters.
 
-fst and snd extract the components of pairs. But what about triples?
+`fst` and `snd` extract the components of pairs. But what about triples?
 Well, there are no provided functions that do that but we can make our
 own.
 
@@ -142,8 +144,8 @@ third :: (a, b, c) -> c
 third (_, _, z) = z
 ~~~~
 
-The \_ means the same thing as it does in list comprehensions. It means
-that we really don't care what that part is, so we just write a \_.
+The `_` means the same thing as it does in list comprehensions. It means
+that we really don't care what that part is, so we just write a `_`.
 
 Which reminds me, you can also pattern match in list comprehensions.
 Check this out:
@@ -157,23 +159,23 @@ ghci> [a+b | (a,b) <- xs]
 Should a pattern match fail, it will just move on to the next element.
 
 Lists themselves can also be used in pattern matching. You can match
-with the empty list [] or any pattern that involves : and the empty
-list. But since [1,2,3] is just syntactic sugar for 1:2:3:[], you can
-also use the former pattern. A pattern like x:xs will bind the head of
-the list to x and the rest of it to xs, even if there's only one element
-so xs ends up being an empty list.
+with the empty list `[]` or any pattern that involves `:` and the empty
+list. But since `[1,2,3]` is just syntactic sugar for `1:2:3:[]`, you can
+also use the former pattern. A pattern like `x:xs` will bind the head of
+the list to `x` and the rest of it to `xs`, even if there's only one element
+so `xs` ends up being an empty list.
 
-*Note*: The x:xs pattern is used a lot, especially with recursive
-functions. But patterns that have : in them only match against lists of
+*Note*: The `x:xs` pattern is used a lot, especially with recursive
+functions. But patterns that have `:` in them only match against lists of
 length 1 or more.
 
 If you want to bind, say, the first three elements to variables and the
 rest of the list to another variable, you can use something like
-x:y:z:zs. It will only match against lists that have three elements or
+`x:y:z:zs`. It will only match against lists that have three elements or
 more.
 
 Now that we know how to pattern match against list, let's make our own
-implementation of the head function.
+implementation of the `head` function.
 
 ~~~~ {.haskell: .hs name="code"}
 head' :: [a] -> a
@@ -191,11 +193,11 @@ ghci> head' "Hello"
 ~~~~
 
 Nice! Notice that if you want to bind to several variables (even if one
-of them is just \_ and doesn't actually bind at all), we have to
-surround them in parentheses. Also notice the error function that we
+of them is just `_` and doesn't actually bind at all), we have to
+surround them in parentheses. Also notice the `error` function that we
 used. It takes a string and generates a runtime error, using that string
 as information about what kind of error occurred. It causes the program
-to crash, so it's not good to use it too much. But calling head on an
+to crash, so it's not good to use it too much. But calling `head` on an
 empty list doesn't make sense.
 
 Let's make a trivial function that tells us some of the first elements
@@ -211,12 +213,12 @@ tell (x:y:_) = "This list is long. The first two elements are: " ++ show x ++ " 
 
 This function is safe because it takes care of the empty list, a
 singleton list, a list with two elements and a list with more than two
-elements. Note that (x:[]) and (x:y:[]) could be rewriten as [x] and
-[x,y] (because its syntatic sugar, we don't need the parentheses). We
-can't rewrite (x:y:\_) with square brackets because it matches any list
+elements. Note that `(x:[])` and `(x:y:[])` could be rewriten as `[x]` and
+`[x,y]` (because its syntatic sugar, we don't need the parentheses). We
+can't rewrite `(x:y:_)` with square brackets because it matches any list
 of length 2 or more.
 
-We already implemented our own length function using list comprehension.
+We already implemented our own `length` function using list comprehension.
 Now we'll do it by using pattern matching and a little recursion:
 
 ~~~~ {.haskell: .hs name="code"}
@@ -229,21 +231,22 @@ This is similar to the factorial function we wrote earlier. First we
 defined the result of a known input — the empty list. This is also known
 as the edge condition. Then in the second pattern we take the list apart
 by splitting it into a head and a tail. We say that the length is equal
-to 1 plus the length of the tail. We use \_ to match the head because we
+to 1 plus the length of the tail. We use `_` to match the head because we
 don't actually care what it is. Also note that we've taken care of all
 possible patterns of a list. The first pattern matches an empty list and
 the second one matches anything that isn't an empty list.
 
-Let's see what happens if we call length' on "ham". First, it will check
+Let's see what happens if we call `length'` on `"ham"`. First, it will check
 if it's an empty list. Because it isn't, it falls through to the second
 pattern. It matches on the second pattern and there it says that the
-length is 1 + length' "am", because we broke it into a head and a tail
-and discarded the head. O-kay. The length' of "am" is, similarly, 1 +
-length' "m". So right now we have 1 + (1 + length' "m"). length' "m" is
-1 + length' "" (could also be written as 1 + length' []). And we've
-defined length' [] to be 0. So in the end we have 1 + (1 + (1 + 0)).
+length is `1 + length' "am"`, because we broke it into a head and a tail
+and discarded the head. O-kay. The `length'` of `"am"` is, similarly,
+`1 + length' "m"`.
+So right now we have `1 + (1 + length' "m")`. `length' "m"` is
+`1 + length' ""` (could also be written as `1 + length' []`). And we've
+defined `length' []` to be `0`. So in the end we have `1 + (1 + (1 + 0))`.
 
-Let's implement sum. We know that the sum of an empty list is 0. We
+Let's implement `sum`. We know that the sum of an empty list is 0. We
 write that down as a pattern. And we also know that the sum of a list is
 the head plus the sum of the rest of the list. So if we write that down,
 we get:
@@ -257,10 +260,10 @@ sum' (x:xs) = x + sum' xs
 There's also a thing called *as patterns*. Those are a handy way of
 breaking something up according to a pattern and binding it to names
 whilst still keeping a reference to the whole thing. You do that by
-putting a name and an @ in front of a pattern. For instance, the pattern
-xs@(x:y:ys). This pattern will match exactly the same thing as x:y:ys
-but you can easily get the whole list via xs instead of repeating
-yourself by typing out x:y:ys in the function body again. Here's a quick
+putting a name and an `@` in front of a pattern. For instance, the pattern
+`xs@(x:y:ys)`. This pattern will match exactly the same thing as `x:y:ys`
+but you can easily get the whole list via `xs` instead of repeating
+yourself by typing out `x:y:ys` in the function body again. Here's a quick
 and dirty example:
 
 ~~~~ {.haskell:nogutter:nocontrols:hs name="code"}
@@ -278,10 +281,10 @@ Normally we use as patterns to avoid repeating ourselves when matching
 against a bigger pattern when we have to use the whole thing again in
 the function body.
 
-One more thing — you can't use ++ in pattern matches. If you tried to
-pattern match against (xs ++ ys), what would be in the first and what
+One more thing — you can't use `++` in pattern matches. If you tried to
+pattern match against `(xs ++ ys)`, what would be in the first and what
 would be in the second list? It doesn't make much sense. It would make
-sense to match stuff against (xs ++ [x,y,z]) or just (xs ++ [x]), but
+sense to match stuff against `(xs ++ [x,y,z])` or just `(xs ++ [x])`, but
 because of the nature of lists, you can't do that.
 
 Guards, guards!
@@ -317,11 +320,11 @@ bmiTell bmi
 
 Guards are indicated by pipes that follow a function's name and its
 parameters. Usually, they're indented a bit to the right and lined up. A
-guard is basically a boolean expression. If it evaluates to True, then
-the corresponding function body is used. If it evaluates to False,
+guard is basically a boolean expression. If it evaluates to `True`, then
+the corresponding function body is used. If it evaluates to `False`,
 checking drops through to the next guard and so on. If we call this
-function with 24.3, it will first check if that's smaller than or equal
-to 18.5. Because it isn't, it falls through to the next guard. The check
+function with `24.3`, it will first check if that's smaller than or equal
+to `18.5`. Because it isn't, it falls through to the next guard. The check
 is carried out with the second guard and because 24.3 is less than 25.0,
 the second string is returned.
 
@@ -331,11 +334,11 @@ usually frowned upon, sometimes a problem is defined in such a discrete
 way that you can't get around them. Guards are a very nice alternative
 for this.
 
-Many times, the last guard is otherwise. otherwise is defined simply as
-otherwise = True and catches everything. This is very similar to
+Many times, the last guard is `otherwise`. `otherwise` is defined simply as
+`otherwise = True` and catches everything. This is very similar to
 patterns, only they check if the input satisfies a pattern but guards
 check for boolean conditions. If all the guards of a function evaluate
-to False (and we haven't provided an otherwise catch-all guard),
+to `False` (and we haven't provided an `otherwise` catch-all guard),
 evaluation falls through to the next *pattern*. That's how patterns and
 guards play nicely together. If no suitable guards or patterns are
 found, an error is thrown.
@@ -363,11 +366,11 @@ ghci> bmiTell 85 1.90
 
 Yay! I'm not fat! But Haskell just called me ugly. Whatever!
 
-Note that there's no = right after the function name and its parameters,
+Note that there's no `=` right after the function name and its parameters,
 before the first guard. Many newbies get syntax errors because they
 sometimes put it there.
 
-Another very simple example: let's implement our own max function. If
+Another very simple example: let's implement our own `max` function. If
 you remember, it takes two things that can be compared and returns the
 larger of them.
 
@@ -380,7 +383,7 @@ max' a b
 
 Guards can also be written inline, although I'd advise against that
 because it's less readable, even for very short functions. But to
-demonstrate, we could write max' like this:
+demonstrate, we could write `max'` like this:
 
 ~~~~ {.haskell:hs name="code"}
 max' :: (Ord a) => a -> a -> a
@@ -388,7 +391,7 @@ max' a b | a > b = a | otherwise = b
 ~~~~
 
 Ugh! Not very readable at all! Moving on: let's implement our own
-compare by using guards.
+`compare` by using guards.
 
 ~~~~ {.haskell:hs name="code"}
 myCompare :: (Ord a) => a -> a -> Ordering
@@ -439,13 +442,13 @@ bmiTell weight height
     where bmi = weight / height ^ 2
 ~~~~
 
-We put the keyword where after the guards (usually it's best to indent
+We put the keyword `where` after the guards (usually it's best to indent
 it as much as the pipes are indented) and then we define several names
 or functions. These names are visible across the guards and give us the
 advantage of not having to repeat ourselves. If we decide that we want
 to calculate BMI a bit differently, we only have to change it once. It
 also improves readability by giving names to things and can make our
-programs faster since stuff like our bmi variable here is calculated
+programs faster since stuff like our `bmi` variable here is calculated
 only once. We could go a bit overboard and present our function like
 this:
 
@@ -507,7 +510,7 @@ calcBmis xs = [bmi w h | (w, h) <- xs]
     where bmi weight height = weight / height ^ 2
 ~~~~
 
-And that's all there is to it! The reason we had to introduce bmi as a
+And that's all there is to it! The reason we had to introduce `bmi` as a
 function in this example is because we can't just calculate one BMI from
 the function's parameters. We have to examine the list passed to the
 function and there's a different BMI for every pair in there.
@@ -540,7 +543,7 @@ cylinder r h =
 
 ![let it be](img/letitbe.png)
 
-The form is let \<bindings\> in \<expression\>. The names that you
+The form is `let <bindings> in <expression>`. The names that you
 define in the *let* part are accessible to the expression after the *in*
 part. As you can see, we could have also defined this with a *where*
 binding. Notice that the names are also aligned in a single column. So
@@ -614,7 +617,7 @@ calcBmis :: (RealFloat a) => [(a, a)] -> [a]
 calcBmis xs = [bmi | (w, h) <- xs, let bmi = w / h ^ 2, bmi >= 25.0]
 ~~~~
 
-We can't use the bmi name in the (w, h) \<- xs part because it's defined
+We can't use the `bmi` name in the `(w, h) <- xs` part because it's defined
 prior to the *let* binding.
 
 We omitted the *in* part of the *let* binding when we used them in list
@@ -685,7 +688,7 @@ case expression of pattern -> result
                    ...
 ~~~~
 
-expression is matched against the patterns. The pattern matching action
+`expression` is matched against the patterns. The pattern matching action
 is the same as expected: the first pattern that matches the expression
 is used. If it falls through the whole case expression and no suitable
 pattern is found, a runtime error occurs.

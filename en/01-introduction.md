@@ -48,7 +48,7 @@ So what's Haskell?
 functional programming language*. In imperative languages you get things
 done by giving the computer a sequence of tasks and then it executes
 them. While executing them, it can change state. For instance, you set
-variable a to 5 and then do some stuff and then set it to something
+variable `a` to 5 and then do some stuff and then set it to something
 else. You have control flow structures for doing some action several
 times. In purely functional programming you don't tell the computer what
 to do as such but rather you tell it what stuff *is*. The factorial of a
@@ -74,15 +74,15 @@ functions and calculate things until it's really forced to show you a
 result. That goes well with referential transparency and it allows you
 to think of programs as a series of *transformations on data*. It also
 allows cool things such as infinite data structures. Say you have an
-immutable list of numbers xs = [1,2,3,4,5,6,7,8] and a function doubleMe
+immutable list of numbers `xs = [1,2,3,4,5,6,7,8]` and a function `doubleMe`
 which multiplies every element by 2 and then returns a new list. If we
 wanted to multiply our list by 8 in an imperative language and did
-doubleMe(doubleMe(doubleMe(xs))), it would probably pass through the
+`doubleMe(doubleMe(doubleMe(xs)))`, it would probably pass through the
 list once and make a copy and then return it. Then it would pass through
 the list another two times and return the result. In a lazy language,
-calling doubleMe on a list without forcing it to show you the result
+calling `doubleMe` on a list without forcing it to show you the result
 ends up in the program sort of telling you "Yeah yeah, I'll do it
-later!". But once you want to see the result, the first doubleMe tells
+later!". But once you want to see the result, the first `doubleMe` tells
 the second one it wants the result, now! The second one says that to the
 third one and the third one reluctantly gives back a doubled 1, which is
 a 2. The second one receives that and gives back 4 to the first one. The
@@ -99,8 +99,8 @@ possible errors are caught at compile time. If you try to add together a
 number and a string, the compiler will whine at you. Haskell uses a very
 good type system that has *type inference*. That means that you don't
 have to explicitly label every piece of code with a type because the
-type system can intelligently figure out a lot about it. If you say a =
-5 + 4, you don't have to tell Haskell that a is a number, it can figure
+type system can intelligently figure out a lot about it. If you say `a =
+5 + 4`, you don't have to tell Haskell that `a` is a number, it can figure
 that out by itself. Type inference also allows your code to be more
 general. If a function you make takes two parameters and adds them
 together and you don't explicitly state their type, the function will
@@ -132,12 +132,12 @@ interactively interact with scripts. Interactively. You can call
 functions from scripts that you load and the results are displayed
 immediately. For learning it's a lot easier and faster than compiling
 every time you make a change and then running the program from the
-prompt. The interactive mode is invoked by typing in ghci at your
+prompt. The interactive mode is invoked by typing in `ghci` at your
 prompt. If you have defined some functions in a file called, say,
-myfunctions.hs, you load up those functions by typing in :l myfunctions
-and then you can play with them, provided myfunctions.hs is in the same
-folder from which ghci was invoked. If you change the .hs script, just
-run :l myfunctions again or do :r, which is equivalent because it
+`myfunctions.hs`, you load up those functions by typing in `:l myfunctions`
+and then you can play with them, provided `myfunctions.hs` is in the same
+folder from which `ghci` was invoked. If you change the .hs script, just
+run `:l myfunctions` again or do `:r`, which is equivalent because it
 reloads the current script. The usual workflow for me when playing
 around in stuff is defining some functions in a .hs file, loading it up
 and messing around with them and then changing the .hs file, loading it
