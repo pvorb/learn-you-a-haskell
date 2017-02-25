@@ -110,7 +110,7 @@ Much to no one's surprise, Maybe is a monad, so let's explore it a bit
 more and see if we can combine it with what we know about monads.
 
 Make sure you understand
-[applicatives](functors-applicative-functors-and-monoids#applicative-functors)
+[applicatives](#applicative-functors)
 at this point. It's good if you have a feel for how the various
 Applicative instances work and what kind of computations they represent,
 because monads are nothing more than taking our existing applicative
@@ -356,6 +356,8 @@ the x took on the value 9 inside the function. It seems as though we
 were able to extract the value from a Maybe without pattern-matching.
 And we still didn't lose the context of our Maybe value, because when
 it's Nothing, the result of using \>\>= will be Nothing as well.
+
+<a name="walk-the-line"></a>
 
 Walk the line
 -------------
@@ -979,6 +981,8 @@ Nothing
 The failed pattern matching has caused a failure within the context of
 our monad instead of causing a program-wide failure, which is pretty
 neat.
+
+<a name="the-list-monad"></a>
 
 The list monad
 --------------

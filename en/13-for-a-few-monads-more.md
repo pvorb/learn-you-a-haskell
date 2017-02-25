@@ -145,9 +145,7 @@ how applyLog takes care of appending the logs.
 
 ### Monoids to the rescue
 
-Be sure you know what
-[monoids](functors-applicative-functors-and-monoids#monoids) are at this
-point! Cheers.
+Be sure you know what [monoids](#monoids) are at this point! Cheers.
 
 Right now, applyLog takes values of type (a,String), but is there a
 reason that the log has to be a String? It uses ++ to append the logs,
@@ -738,8 +736,8 @@ Reader? Ugh, not this joke again.
 
 ![bang youre dead](img/revolver.png)
 
-In the [chapter about
-applicatives](functors-applicative-functors-and-monoids), we saw that
+In the [chapte about
+applicatives](#functors-applicative-functors-and-monoids), we saw that
 the function type, (-\>) r is an instance of Functor. Mapping a function
 f over a function g will make a function that takes the same thing as g,
 applies g to it and then applies f to that result. So basically, we're
@@ -876,7 +874,7 @@ Haskell features a thing called the state monad, which makes dealing
 with stateful problems a breeze while still keeping everything nice and
 pure.
 
-[When we were dealing with random numbers](input-and-output#randomness),
+[When we were dealing with random numbers](#randomness),
 we dealt with functions that took a random generator as a parameter and
 returned a random number and a new random generator. If we wanted to
 generate several random numbers, we always had to use the random
@@ -1822,7 +1820,7 @@ they just decide to be everything at once, it's a bit easier.
 ### foldM
 
 The monadic counterpart to foldl is foldM. If you remember your folds
-from the [folds section](folds), you know that foldl takes a binary
+from the [folds section](#folds), you know that foldl takes a binary
 function, a starting accumulator and a list to fold up and then folds it
 from the left into a single value by using the binary function. foldM
 does the same thing, except it takes a binary function that produces a
@@ -1888,7 +1886,7 @@ your fold goes along its way.
 ![i've found yellow!](img/miner.png)
 
 When we were solving the problem of [implementing a RPN
-calculator](reverse-polish-notation-calculator), we noted that it worked
+calculator](#reverse-polish-notation-calculator), we noted that it worked
 fine as long as the input that it got made sense. But if something went
 wrong, it caused our whole program to crash. Now that we know how to
 take some code that we have and make it monadic, let's take our RPN
@@ -2076,7 +2074,7 @@ foldr or anything because the \<=\< function makes sure that composition
 happens in a monadic fashion.
 
 When we were getting to know the list monad in the [previous
-chapter](a-fistful-of-monads#the-list-monad), we used it to figure out
+chapter](#the-list-monad), we used it to figure out
 if a knight can go from one position on a chessboard to another in
 exactly three moves. We had a function called moveKnight which took the
 knight's position on the board and returned all the possible moves that

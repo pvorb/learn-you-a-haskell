@@ -33,7 +33,7 @@ Functors redux
 ![frogs dont even need money](img/frogtor.png)
 
 We've already talked about functors in [their own little
-section](making-our-own-types-and-typeclasses#the-functor-typeclass). If
+section](#the-functor-typeclass). If
 you haven't read it yet, you should probably give it a glance right now,
 or maybe later when you have more time. Or you can just pretend you read
 it.
@@ -283,7 +283,7 @@ the type of fmap once more. Its type is fmap :: (a -\> b) -\> f a -\> f
 b. We're missing the class constraint (Functor f) =\>, but we left it
 out here for brevity, because we're talking about functors anyway so we
 know what the f stands for. When we first learned about [curried
-functions](higher-order-functions#curried-functions), we said that all
+functions](#curried-functions), we said that all
 Haskell functions actually take one parameter. A function a -\> b -\> c
 actually takes just one parameter of type a and then returns a function
 b -\> c, which takes one parameter and returns a c. That's how if we
@@ -439,7 +439,7 @@ from the implementation we see that this equals Just (f (g x)).
 
 If you're a bit confused by this proof, don't worry. Be sure that you
 understand how [function
-composition](higher-order-functions#composition) works. Many times, you
+composition](#composition) works. Many times, you
 can intuitively see how these laws hold because the types act like
 containers or functions. You can also just try them on a bunch of
 different values of a type and be able to say with some certainty that a
@@ -566,6 +566,8 @@ the transformation (+3) to its output. The result is still a function,
 only when we give it a number, it will be multiplied by three and then
 it will go through the attached transformation where it will be added to
 three. This is what happens with composition.
+
+<a name="applicative-functors"></a>
 
 Applicative functors
 --------------------
@@ -873,7 +875,7 @@ Just "Hey"
 What about \<\*\>? If we look at what \<\*\>'s type would be if it were
 limited only to lists, we get (\<\*\>) :: [a -\> b] -\> [a] -\> [b].
 It's implemented with a [list
-comprehension](starting-out#im-a-list-comprehension). \<\*\> has to
+comprehension](#im-a-list-comprehension). \<\*\> has to
 somehow extract the function out of its left parameter and then map it
 over the right parameter. But the thing here is that the left list can
 have zero functions, one function, or several functions inside it. The
@@ -1858,6 +1860,8 @@ of a type class, chances are you're looking for a *newtype*. And if you
 want to make something completely new, odds are good that you're looking
 for the *data* keyword.
 
+<a name="monoids"></a>
+
 Monoids
 -------
 
@@ -2535,7 +2539,7 @@ Just value and as an empty list if it's Nothing. So let's examine a data
 structure that's a little more complex then.
 
 Remember the tree data structure from the [Making Our Own Types and
-Typeclasses](making-our-own-types-and-typeclasses#recursive-data-structures)
+Typeclasses](#recursive-data-structures)
 chapter? We defined it like this:
 
 ~~~~ {.haskell:hs name="code"}

@@ -287,6 +287,8 @@ would be in the second list? It doesn't make much sense. It would make
 sense to match stuff against `(xs ++ [x,y,z])` or just `(xs ++ [x])`, but
 because of the nature of lists, you can't do that.
 
+<a name="guards-guards"></a>
+
 Guards, guards!
 ---------------
 
@@ -519,6 +521,8 @@ function and there's a different BMI for every pair in there.
 function and define some helper function in its *where* clause and then
 to give those functions helper functions as well, each with its own
 *where* clause.
+
+<a name="let-it-be"></a>
 
 Let it be
 ---------

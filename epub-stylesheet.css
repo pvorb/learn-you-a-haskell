@@ -1,29 +1,9 @@
 /* This defines styles and classes used in the book */
-body {
-  margin: 5%;
-  text-align: justify;
-  font-size: medium;
-}
 code {
-  font-family: monospace;
-}
-h1 {
-  text-align: left;
-}
-h2 {
-  text-align: left;
-}
-h3 {
-  text-align: left;
-}
-h4 {
-  text-align: left;
-}
-h5 {
-  text-align: left;
-}
-h6 {
-  text-align: left;
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 0.88em;
+  line-height: 100%;
+  white-space: pre-wrap;
 }
 ol.toc {
   padding: 0;
@@ -35,6 +15,14 @@ ol.toc li {
   padding: 0;
 }
 pre {
-  white-space: pre-wrap;
-  /* CSS 3 */
+  margin: 10pt;
+}
+#cover img {
+  width: 100%;
+}
+@font-face {
+  font-family: "Ubuntu Mono";
+  font-weight: normal;
+  font-style: normal;
+  src: url(UbuntuMono-Regular.otf);
 }

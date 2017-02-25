@@ -264,7 +264,7 @@ show on it and then it will print that string to the terminal using
 putStrLn implicitly.
 
 Remember *let* bindings? If you don't, refresh your memory on them by
-reading [this section](syntax-in-functions#let-it-be). They have to be
+reading [this section](#let-it-be). They have to be
 in the form of let *bindings* in *expression*, where *bindings* are
 names to be given to expressions and *expression* is the expression that
 is to be evaluated that sees them. We also said that in list
@@ -1115,7 +1115,7 @@ returns an I/O action that will open a file and have the file's
 associated handle encapsulated as its result.
 
 FilePath is just a [type
-synonym](making-our-own-types-and-typeclasses#type-synonyms) for String,
+synonym](#type-synonyms) for String,
 simply defined as:
 
 ~~~~ {.haskell:hs name="code"}
@@ -1808,6 +1808,8 @@ I/O action that just reports there has been an error (say, errorExit ::
 IO ()) and then check for possible erronous input and if there is
 erronous input, perform the error reporting I/O action. Another way is
 to use exceptions, which we will meet soon.
+
+<a name="randomness"></a>
 
 Randomness
 ----------
@@ -2684,7 +2686,7 @@ a function that takes an IOError and returns a True or False, meaning it
 has a type of isDoesNotExistError :: IOError -\> Bool. We use it on the
 exception that gets passed to our handler to see if it's an error caused
 by a file not existing. We use
-[guard](syntax-in-functions#guards-guards) syntax here, but we could
+[guard](#guards-guards) syntax here, but we could
 have also used an *if else*. If it's not caused by a file not existing,
 we re-throw the exception that was passed by the handler with the
 ioError function. It has a type of ioError :: IOException -\> IO a, so

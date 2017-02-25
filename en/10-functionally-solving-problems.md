@@ -9,6 +9,8 @@ Each section will present a different problem. First we'll describe the
 problem, then we'll try and find out what the best (or least worst) way
 of solving it is.
 
+<a name="reverse-polish-notation-calculator"></a>
+
 Reverse Polish notation calculator
 ----------------------------------
 
@@ -78,7 +80,7 @@ list of items like ["10","4","3","+","2","\*","-"].
 Next up, what did we do with that list of items in our head? We went
 over it from left to right and kept a stack as we did that. Does the
 previous sentence remind you of anything? Remember, in the section about
-[folds](higher-order-functions/#folds), we said that pretty much any
+[folds](#folds), we said that pretty much any
 function where you traverse a list from left to right or right to left
 one element by element and build up (accumulate) some result (whether
 it's a number, a list, a stack, whatever) can be implemented with a
@@ -124,7 +126,7 @@ So all that's left now is to implement a folding function that will take
 a stack, like [4,10], and an item, like "3" and return a new stack
 [3,4,10]. If the stack is [4,10] and the item "\*", then it will have to
 return [40]. But before that, let's turn our function into [point-free
-style](higher-order-functions#composition) because it has a lot of
+style](#composition) because it has a lot of
 parentheses that are kind of freaking me out:
 
 ~~~~ {.haskell:hs name="code"}

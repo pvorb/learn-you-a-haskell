@@ -12,6 +12,8 @@ turns out that if you want to define computations by defining what stuff
 them, higher order functions are indispensable. They're a really
 powerful way of solving problems and thinking about programs.
 
+<a name="curried-functions"></a>
+
 Curried functions
 -----------------
 
@@ -398,7 +400,7 @@ depending on the code and the context. The `filter` equivalent of applying
 several predicates in a list comprehension is either filtering something
 several times or joining the predicates with the logical `&&` function.
 
-Remember our quicksort function from the [previous chapter](recursion)?
+Remember our quicksort function from the [previous chapter](#recursion)?
 We used list comprehensions to filter out the list elements that are
 smaller than (or equal to) and larger than the pivot. We can achieve the
 same functionality in a more readable way by using `filter`:
@@ -658,6 +660,8 @@ function parameter and then passing the resulting function on to a map
 or a filter. So use lambdas in this way when you want to make it
 explicit that your function is mainly meant to be partially applied and
 passed on to a function as a parameter.
+
+<a name="folds"></a>
 
 Only folds and horses
 ---------------------
@@ -970,6 +974,8 @@ for instance, map function application over a list of functions.
 ghci> map ($ 3) [(4+), (10*), (^2), sqrt]
 [7.0,30.0,9.0,1.7320508075688772]
 ~~~~
+
+<a name="composition"></a>
 
 Function composition
 --------------------
