@@ -2490,7 +2490,7 @@ Trees especially lend themselves well to folding.
 Because there are so many data structures that work nicely with folds,
 the Foldable type class was introduced. Much like Functor is for things
 that can be mapped over, Foldable is for things that can be folded up!
-It can be found in Data.Foldable and because it export functions whose
+It can be found in Data.Foldable and because it exports functions whose
 names clash with the ones from the Prelude, it's best imported qualified
 (and served with basil):
 
