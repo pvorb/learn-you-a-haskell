@@ -367,7 +367,7 @@ case you don't know!".
 
 `Enum` members are sequentially ordered types — they can be enumerated.
 The main advantage of the `Enum` typeclass is that we can use its types in
-list ranges. They also have defined successors and predecesors, which
+list ranges. They also have defined successors and predecessors, which
 you can get with the `succ` and `pred` functions. Types in this class: `()`,
 `Bool`, `Char`, `Ordering`, `Int`, `Integer`, `Float` and `Double`.
 

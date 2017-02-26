@@ -234,7 +234,7 @@ that means that whoever imports our module can make shapes by using the
 
 We could also opt not to export any value constructors for `Shape` by just
 writing `Shape` in the export statement. That way, someone importing our
-module could only make shapes by using the auxilliary functions
+module could only make shapes by using the auxiliary functions
 `baseCircle` and `baseRect`. `Data.Map` uses that approach. You can't create a
 map by doing `Map.Map [(1,2),(3,4)]` because it doesn't export that value
 constructor. However, you can make a mapping by using one of the
@@ -274,7 +274,7 @@ Person "Buddy" "Finklestein" 43 184.2 "526-2928" "Chocolate"
 ~~~~
 
 That's kind of cool, although slightly unreadable. What if we want to
-create a function to get seperate info from a person? A function that
+create a function to get separate info from a person? A function that
 gets some person's first name, a function that gets some person's last
 name, etc. Well, we'd have to define them kind of like this.
 
@@ -1044,7 +1044,7 @@ Left True :: Either Bool b
 ~~~~
 
 So far, we've seen that `Maybe a` was mostly used to represent the results
-of computations that could have either failed or not. But somtimes,
+of computations that could have either failed or not. But sometimes,
 `Maybe a` isn't good enough because `Nothing` doesn't really convey much
 information other than that something has failed. That's cool for
 functions that can fail in only one way or if we're just not interested
@@ -2246,7 +2246,7 @@ declaration will be: `instance Functor (Barry a b) where`. If we look at
 `fmap` as if it was made specifically for `Barry`, it would have a type of
 `fmap :: (a -> b) -> Barry c d a -> Barry c d b`, because we just
 replace the `Functor`'s `f` with `Barry c d`. The third type parameter from
-`Barry` will have to change and we see that it's conviniently in its own
+`Barry` will have to change and we see that it's conveniently in its own
 field.
 
 ~~~~ {.haskell:hs name="code"}

@@ -1805,8 +1805,8 @@ top of the to-do list.
 You could make this program fail a bit more gracefully in case of bad
 input (for example, if someone runs todo UP YOURS HAHAHAHA) by making an
 I/O action that just reports there has been an error (say, errorExit ::
-IO ()) and then check for possible erronous input and if there is
-erronous input, perform the error reporting I/O action. Another way is
+IO ()) and then check for possible erroneous input and if there is
+erroneous input, perform the error reporting I/O action. Another way is
 to use exceptions, which we will meet soon.
 
 <a name="randomness"></a>
@@ -2180,7 +2180,7 @@ a number, so number is now 7.
 
 **Excuse me!** If the user gives us some input here that read can't read
 (like "haha"), our program will crash with an ugly error message. If you
-don't want your program to crash on erronous input, use reads, which
+don't want your program to crash on erroneous input, use reads, which
 returns an empty list when it fails to read a string. When it succeeds,
 it returns a singleton list with a tuple that has our desired value as
 one component and a string with what it didn't consume as the other.
@@ -2257,7 +2257,7 @@ only be accessed when the need arises.
 However, processing files as strings has one drawback: it tends to be
 slow. As you know, String is a type synonym for [Char]. Chars don't have
 a fixed size, because it takes several bytes to represent a character
-from, say, Unicode. Furthemore, lists are really lazy. If you have a
+from, say, Unicode. Furthermore, lists are really lazy. If you have a
 list like [1,2,3,4], it will be evaluated only when completely
 necessary. So the whole list is sort of a promise of a list. Remember
 that [1,2,3,4] is syntactic sugar for 1:2:3:4:[]. When the first element
