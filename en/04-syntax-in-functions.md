@@ -165,9 +165,9 @@ also use the former pattern. A pattern like `x:xs` will bind the head of
 the list to `x` and the rest of it to `xs`, even if there's only one element
 so `xs` ends up being an empty list.
 
-*Note*: The `x:xs` pattern is used a lot, especially with recursive
-functions. But patterns that have `:` in them only match against lists of
-length 1 or more.
+> *Note*: The `x:xs` pattern is used a lot, especially with recursive
+> functions. But patterns that have `:` in them only match against lists of
+> length 1 or more.
 
 If you want to bind, say, the first three elements to variables and the
 rest of the list to another variable, you can use something like
@@ -408,9 +408,9 @@ ghci> 3 `myCompare` 2
 GT
 ~~~~
 
-*Note:* Not only can we call functions as infix with backticks, we can
-also define them using backticks. Sometimes it's easier to read that
-way.
+> *Note:* Not only can we call functions as infix with backticks, we can
+> also define them using backticks. Sometimes it's easier to read that
+> way.
 
 Where!?
 -------

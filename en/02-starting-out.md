@@ -322,9 +322,9 @@ elements of the same type. That means that we can have a list of
 integers or a list of characters but we can't have a list that has a few
 integers and then a few characters. And now, a list!
 
-*Note*: We can use the `let` keyword to define a name right in GHCI. Doing
-`let a = 1` inside GHCI is the equivalent of writing `a = 1` in a script and
-then loading it.
+> *Note*: We can use the `let` keyword to define a name right in GHCI. Doing
+> `let a = 1` inside GHCI is the equivalent of writing `a = 1` in a script and
+> then loading it.
 
 ~~~~ {.haskell: .ghci name="code"}
 ghci> let lostNumbers = [4,8,15,16,23,42]
@@ -378,9 +378,9 @@ square brackets so it becomes a list.
 list. If we prepend `3` to it, it becomes `[3]`. If we prepend `2` to that, it
 becomes `[2,3]`, and so on.
 
-*Note:* `[]`, `[[]]` and `[[],[],[]]` are all different things. The first one
-is an empty list, the seconds one is a list that contains one empty
-list, the third one is a list that contains three empty lists.
+> *Note:* `[]`, `[[]]` and `[[],[],[]]` are all different things. The first one
+> is an empty list, the seconds one is a list that contains one empty
+> list, the third one is a list that contains three empty lists.
 
 If you want to get an element out of a list by index, use `!!`. The
 indices start at 0.
@@ -910,9 +910,9 @@ ghci> snd ("Wow", False)
 False
 ~~~~
 
-*Note:* these functions operate only on pairs. They won't work on
-triples, 4-tuples, 5-tuples, etc. We'll go over extracting data from
-tuples in different ways a bit later.
+> *Note:* these functions operate only on pairs. They won't work on
+> triples, 4-tuples, 5-tuples, etc. We'll go over extracting data from
+> tuples in different ways a bit later.
 
 A cool function that produces a list of pairs: `zip`. It takes two lists
 and then zips them together into one list by joining the matching

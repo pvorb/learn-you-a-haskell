@@ -138,10 +138,10 @@ list. Otherwise return a list that has `x` as the first element and then `x`
 replicated n-1 times as the tail. Eventually, the `(n-1)` part will cause
 our function to reach the edge condition.
 
-*Note:* `Num` is not a subclass of `Ord`. That means that what constitutes
-for a number doesn't really have to adhere to an ordering. So that's why
-we have to specify both the `Num` and `Ord` class constraints when doing
-addition or subtraction and also comparison.
+> *Note:* `Num` is not a subclass of `Ord`. That means that what constitutes
+> for a number doesn't really have to adhere to an ordering. So that's why
+> we have to specify both the `Num` and `Ord` class constraints when doing
+> addition or subtraction and also comparison.
 
 Next up, we'll implement `take`. It takes a certain number of elements
 from a list. For instance, `take 3 [5,4,3,2,1]` will return `[5,4,3]`. If we
