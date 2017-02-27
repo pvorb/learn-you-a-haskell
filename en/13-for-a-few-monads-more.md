@@ -53,7 +53,7 @@ isBigGang x = x > 9
 
 Now, what if instead of just giving us a `True` or `False` value, we want it
 to also return a log string that says what it did? Well, we just make
-that string and return it along side our `Bool`:
+that string and return it alongside our `Bool`:
 
 ~~~~ {.haskell:hs name="code"}
 isBigGang :: Int -> (Bool, String)
