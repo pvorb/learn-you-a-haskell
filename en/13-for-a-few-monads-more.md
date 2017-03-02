@@ -2129,7 +2129,7 @@ Making monads
 In this section, we're going to look at an example of how a type gets
 made, identified as a monad and then given the appropriate `Monad`
 instance. We don't usually set out to make a monad with the sole purpose
-of making a monad. Instead, we usually make a type that whose purpose is
+of making a monad. Instead, we usually make a type whose purpose is
 to model an aspect of some problem and then later on if we see that the
 type represents a value with a context and can act like a monad, we give
 it a `Monad` instance.
