@@ -2068,7 +2068,7 @@ ghci> f 1
 
 The function `f` takes a number and then adds `1` to it, multiplies the
 result by `100` and then adds `1` to that. Anyway, we can compose monadic
-functions in the same way, only instead normal composition we use `<=<`
+functions in the same way, only instead of normal composition we use `<=<`
 and instead of `id` we use `return`. We don't have to use a `foldM` over a
 `foldr` or anything because the `<=<` function makes sure that composition
 happens in a monadic fashion.
