@@ -2210,7 +2210,7 @@ instance Functor Prob where
     fmap f (Prob xs) = Prob $ map (\(x,p) -> (f x,p)) xs
 ~~~~
 
-We `unwrap` it from the newtype with pattern matching, apply the function
+We unwrap it from the `newtype` with pattern matching, apply the function
 `f` to the values while keeping the probabilities as they are and then
 wrap it back up. Let's see if it works:
 
