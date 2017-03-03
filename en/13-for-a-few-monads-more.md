@@ -2266,7 +2266,7 @@ thisSituation = Prob
     ]
 ~~~~
 
-Notice that its type is `Prob (Prob Char)`. So now that we've figure out
+Notice that its type is `Prob (Prob Char)`. So now that we've figured out
 how to flatten a nested probability list, all we have to do is write the
 code for this and then we can write `>>=` simply as `join (fmap f m)` and
 we have ourselves a monad! So here's `flatten`, which we'll use because
