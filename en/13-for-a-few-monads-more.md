@@ -1741,7 +1741,7 @@ keepSmall x
         return False
 ~~~~
 
-Instead of just and returning a `Bool`, this function returns a
+Instead of just returning a `Bool`, this function returns a
 `Writer [String] Bool`. It's a monadic predicate. Sounds fancy, doesn't it? If
 the number is smaller than `4` we report that we're keeping it and then
 `return True`.
