@@ -112,8 +112,8 @@ calling it with `100` returns a `(Num a, Ord a) => a -> Ordering`. The
 additional class constraint sneaks up there because `100` is also part of
 the `Num` typeclass.
 
-*Yo!* Make sure you really understand how curried functions and partial
-application work because they're really important!
+> *Yo!* Make sure you really understand how curried functions and partial
+> application work because they're really important!
 
 Infix functions can also be partially applied by using sections. To
 section an infix function, simply surround it with parentheses and only
@@ -190,12 +190,12 @@ type `a -> a`) and the second is that same `a`. The function can also be
 `Int -> Int` or `String -> String` or whatever. But then, the second
 parameter to also has to be of that type.
 
-*Note:* From now on, we'll say that functions take several parameters
-despite each function actually taking only one parameter and returning
-partially applied functions until we reach a function that returns a
-solid value. So for simplicity's sake, we'll say that `a -> a -> a`
-takes two parameters, even though we know what's really going on under
-the hood.
+> *Note:* From now on, we'll say that functions take several parameters
+> despite each function actually taking only one parameter and returning
+> partially applied functions until we reach a function that returns a
+> solid value. So for simplicity's sake, we'll say that `a -> a -> a`
+> takes two parameters, even though we know what's really going on under
+> the hood.
 
 The body of the function is pretty simple. We just use the parameter `f`
 as a function, applying `x` to it by separating them with a space and then
@@ -538,10 +538,10 @@ that just checks whether a list's length is longer than 15. Once we've
 done the filtering, we see how many chains are left in the resulting
 list.
 
-*Note:* This function has a type of `numLongChains :: Int` because `length`
-returns an `Int` instead of a `Num a` for historical reasons. If we wanted
-to return a more general `Num a`, we could have used `fromIntegral` on the
-resulting length.
+> *Note:* This function has a type of `numLongChains :: Int` because `length`
+> returns an `Int` instead of a `Num a` for historical reasons. If we wanted
+> to return a more general `Num a`, we could have used `fromIntegral` on the
+> resulting length.
 
 Using `map`, we can also do stuff like `map (*) [0..]`, if not for any
 other reason than to illustrate how currying works and how (partially

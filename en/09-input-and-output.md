@@ -49,10 +49,10 @@ functions that way. But now, after eight or so chapters, we're finally
 going to write our first *real* Haskell program! Yay! And sure enough,
 we're going to do the good old `"hello, world"` schtick.
 
-*Hey!* For the purposes of this chapter, I'm going to assume you're
-using a unix-y environment for learning Haskell. If you're in Windows,
-I'd suggest you download [Cygwin](http://www.cygwin.com/), which is a
-Linux-like environment for Windows, A.K.A. just what you need.
+> *Hey!* For the purposes of this chapter, I'm going to assume you're
+> using a unix-y environment for learning Haskell. If you're in Windows,
+> I'd suggest you download [Cygwin](http://www.cygwin.com/), which is a
+> Linux-like environment for Windows, A.K.A. just what you need.
 
 So, for starters, punch in the following in your favorite text editor:
 
@@ -106,7 +106,7 @@ also contain some kind of return value inside it. Printing a string to
 the terminal doesn't really have any kind of meaningful return value, so
 a dummy value of `()` is used.
 
-The empty tuple is a value of `()` and it also has a type of `()`.
+> The empty tuple is a value of `()` and it also has a type of `()`.
 
 So, when will an I/O action be performed? Well, this is where `main` comes
 in. An I/O action will be performed when we give it a name of `main` and
@@ -322,10 +322,10 @@ reverseWords = unwords . map reverse . words
 To get a feel of what it does, you can run it before we go over the
 code.
 
-*Protip*: To run a program you can either compile it and then run the
-produced executable file by doing `ghc --make helloworld` and then
-`./helloworld` or you can use the `runhaskell` command like so:
-`runhaskell helloworld.hs` and your program will be executed on the fly.
+> *Protip*: To run a program you can either compile it and then run the
+> produced executable file by doing `ghc --make helloworld` and then
+> `./helloworld` or you can use the `runhaskell` command like so:
+> `runhaskell helloworld.hs` and your program will be executed on the fly.
 
 First, let's take a look at the `reverseWords` function. It's just a
 normal function that takes a string like "hey there man" and then calls
@@ -431,9 +431,9 @@ result value of its last action, but we want it to have a different
 result value, so we use `return` to make an I/O action that always has our
 desired result contained and we put it at the end.
 
-A *do* block can also have just one I/O action. In that case, it's the
-same as just writing the I/O action. Some people would prefer writing
-`then do return ()` in this case because the *else* also has a *do*.
+> A *do* block can also have just one I/O action. In that case, it's the
+> same as just writing the I/O action. Some people would prefer writing
+> `then do return ()` in this case because the *else* also has a *do*.
 
 Before we move on to files, let's take a look at some functions that are
 useful when dealing with I/O.
@@ -2182,12 +2182,12 @@ ends the program. If it isn't, the action consisting of that *do* block
 right there gets performed. We use `read` on `numberString` to convert it to
 a `number`, so number is now `7`.
 
-**Excuse me!** If the user gives us some input here that `read` can't read
-(like `"haha"`), our program will crash with an ugly error message. If you
-don't want your program to crash on erroneous input, use `reads`, which
-returns an empty list when it fails to read a string. When it succeeds,
-it returns a singleton list with a tuple that has our desired value as
-one component and a string with what it didn't consume as the other.
+> **Excuse me!** If the user gives us some input here that `read` can't read
+> (like `"haha"`), our program will crash with an ugly error message. If you
+> don't want your program to crash on erroneous input, use `reads`, which
+> returns an empty list when it fails to read a string. When it succeeds,
+> it returns a singleton list with a tuple that has our desired value as
+> one component and a string with what it didn't consume as the other.
 
 We check if the number that we entered is equal to the one generated
 randomly and give the user the appropriate message. And then we call

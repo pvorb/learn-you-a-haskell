@@ -968,15 +968,15 @@ have a type of `(Eq k) => k -> AssocList k v -> Maybe v`. `AssocList` is
 a type constructor that takes two types and produces a concrete type,
 like `AssocList Int String`, for instance.
 
-*Fonzie says:* Aaay! When I talk about *concrete types* I mean like
-fully applied types like `Map Int String` or if we're dealin' with one of
-them polymorphic functions, `[a]` or `(Ord a) => Maybe a` and stuff. And
-like, sometimes me and the boys say that `Maybe` is a type, but we don't
-mean that, cause every idiot knows `Maybe` is a type constructor. When I
-apply an extra type to `Maybe`, like `Maybe String`, then I have a concrete
-type. You know, values can only have types that are concrete types! So
-in conclusion, live fast, love hard and don't let anybody else use your
-comb!
+> *Fonzie says:* Aaay! When I talk about *concrete types* I mean like
+> fully applied types like `Map Int String` or if we're dealin' with one of
+> them polymorphic functions, `[a]` or `(Ord a) => Maybe a` and stuff. And
+> like, sometimes me and the boys say that `Maybe` is a type, but we don't
+> mean that, cause every idiot knows `Maybe` is a type constructor. When I
+> apply an extra type to `Maybe`, like `Maybe String`, then I have a concrete
+> type. You know, values can only have types that are concrete types! So
+> in conclusion, live fast, love hard and don't let anybody else use your
+> comb!
 
 Just like we can partially apply functions to get new functions, we can
 partially apply type parameters and get new type constructors from them.
@@ -999,10 +999,10 @@ type IntMap = Map Int
 Either way, the `IntMap` type constructor takes one parameter and that is
 the type of what the integers will point to.
 
-*Oh yeah*. If you're going to try and implement this, you'll probably
-going to do a qualified import of `Data.Map`. When you do a qualified
-import, type constructors also have to be preceeded with a module name.
-So you'd write `type IntMap = Map.Map Int`.
+> *Oh yeah*. If you're going to try and implement this, you'll probably
+> going to do a qualified import of `Data.Map`. When you do a qualified
+> import, type constructors also have to be preceeded with a module name.
+> So you'd write `type IntMap = Map.Map Int`.
 
 Make sure that you really understand the distinction between type
 constructors and value constructors. Just because we made a type synonym
@@ -1461,10 +1461,10 @@ it just has to be a lowercase word. Then, we define several functions.
 It's not mandatory to implement the function bodies themselves, we just
 have to specify the type declarations for the functions.
 
-Some people might understand this better if we wrote
-`class Eq equatable where`
-and then specified the type declarations like
-`(==) :: equatable -> equatable -> Bool`.
+> Some people might understand this better if we wrote
+> `class Eq equatable where`
+> and then specified the type declarations like
+> `(==) :: equatable -> equatable -> Bool`.
 
 Anyway, we *did* implement the function bodies for the functions that `Eq`
 defines, only we defined them in terms of mutual recursion. We said that
@@ -1472,10 +1472,10 @@ two instances of `Eq` are equal if they are not different and they are
 different if they are not equal. We didn't have to do this, really, but
 we did and we'll see how this helps us soon.
 
-If we have say `class Eq a where` and then define a type declaration
-within that class like `(==) :: a -> -a -> Bool`, then when we examine
-the type of that function later on, it will have the type of
-`(Eq a) => a -> a -> Bool`.
+> If we have say `class Eq a where` and then define a type declaration
+> within that class like `(==) :: a -> -a -> Bool`, then when we examine
+> the type of that function later on, it will have the type of
+> `(Eq a) => a -> a -> Bool`.
 
 So once we have a class, what can we do with it? Well, not much, really.
 But once we start making types instances of that class, we start getting
@@ -1662,15 +1662,15 @@ in the type declarations (like the `a` in `a -> a -> Bool`), you have to
 supply type parameters and add parentheses so that you end up with a
 concrete type.
 
-Take into account that the type you're trying to make an instance of
-will replace the parameter in the *class* declaration. The `a` from
-`class Eq a where`
-will be replaced with a real type when you make an instance,
-so try mentally putting your type into the function type declarations as
-well. `(==) :: Maybe -> Maybe -> Bool` doesn't make much sense but
-`(==) :: (Eq m) => Maybe m -> Maybe m -> Bool` does. But this is just
-something to think about, because `==` will always have a type of
-`(==) :: (Eq a) => a -> a -> Bool`, no matter what instances we make.
+> Take into account that the type you're trying to make an instance of
+> will replace the parameter in the *class* declaration. The `a` from
+> `class Eq a where`
+> will be replaced with a real type when you make an instance,
+> so try mentally putting your type into the function type declarations as
+> well. `(==) :: Maybe -> Maybe -> Bool` doesn't make much sense but
+> `(==) :: (Eq m) => Maybe m -> Maybe m -> Bool` does. But this is just
+> something to think about, because `==` will always have a type of
+> `(==) :: (Eq a) => a -> a -> Bool`, no matter what instances we make.
 
 Ooh, one more thing, check this out! If you want to see what the
 instances of a typeclass are, just do `:info YourTypeClass` in GHCI. So
@@ -2014,9 +2014,9 @@ Maps from `Data.Map` can also be made a functor because they hold values
 (or not!). In the case of `Map k v`, `fmap` will map a function `v -> v'`
 over a map of type `Map k v` and return a map of type `Map k v'`.
 
-Note, the `'` has no special meaning in types just like it doesn't have
-special meaning when naming values. It's used to denote things that are
-similar, only slightly changed.
+> Note, the `'` has no special meaning in types just like it doesn't have
+> special meaning when naming values. It's used to denote things that are
+> similar, only slightly changed.
 
 Try figuring out how `Map k` is made an instance of `Functor` by yourself!
 
@@ -2025,18 +2025,18 @@ pretty cool higher-order concepts. We've also had some more practice
 with partially applying types and making instances. In one of the next
 chapters, we'll also take a look at some laws that apply for functors.
 
-*Just one more thing!* Functors should obey some laws so that they may
-have some properties that we can depend on and not think about too much.
-If we use `fmap (+1)` over the list `[1,2,3,4]`, we expect the result to be
-`[2,3,4,5]` and not its reverse, `[5,4,3,2]`. If we use `fmap (\a -> a)`
-(the identity function, which just returns its parameter) over some
-list, we expect to get back the same list as a result. For example, if
-we gave the wrong functor instance to our `Tree` type, using `fmap` over a
-tree where the left sub-tree of a node only has elements that are
-smaller than the node and the right sub-tree only has nodes that are
-larger than the node might produce a tree where that's not the case.
-We'll go over the functor laws in more detail in one of the next
-chapters.
+> *Just one more thing!* Functors should obey some laws so that they may
+> have some properties that we can depend on and not think about too much.
+> If we use `fmap (+1)` over the list `[1,2,3,4]`, we expect the result to be
+> `[2,3,4,5]` and not its reverse, `[5,4,3,2]`. If we use `fmap (\a -> a)`
+> (the identity function, which just returns its parameter) over some
+> list, we expect to get back the same list as a result. For example, if
+> we gave the wrong functor instance to our `Tree` type, using `fmap` over a
+> tree where the left sub-tree of a node only has elements that are
+> smaller than the node and the right sub-tree only has nodes that are
+> larger than the node might produce a tree where that's not the case.
+> We'll go over the functor laws in more detail in one of the next
+> chapters.
 
 Kinds and some type-foo
 -----------------------

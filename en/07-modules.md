@@ -1048,11 +1048,11 @@ findKey :: (Eq k) => k -> [(k,v)] -> Maybe v
 findKey key = foldr (\(k,v) acc -> if key == k then Just v else acc) Nothing
 ~~~~
 
-*Note:* It's usually better to use folds for this standard list
-recursion pattern instead of explicitly writing the recursion because
-they're easier to read and identify. Everyone knows it's a fold when
-they see the `foldr` call, but it takes some more thinking to read
-explicit recursion.
+> *Note:* It's usually better to use folds for this standard list
+> recursion pattern instead of explicitly writing the recursion because
+> they're easier to read and identify. Everyone knows it's a fold when
+> they see the `foldr` call, but it takes some more thinking to read
+> explicit recursion.
 
 ~~~~ {.haskell:ghci name="code"}
 ghci> findKey "penny" phoneBook

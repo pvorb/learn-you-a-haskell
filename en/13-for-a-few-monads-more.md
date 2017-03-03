@@ -145,7 +145,7 @@ how `applyLog` takes care of appending the logs.
 
 ### Monoids to the rescue
 
-Be sure you know what [monoids](#monoids) are at this point! Cheers.
+> Be sure you know what [monoids](#monoids) are at this point! Cheers.
 
 Right now, `applyLog` takes values of type `(a,String)`, but is there a
 reason that the log has to be a `String`? It uses `++` to append the logs,
@@ -917,14 +917,14 @@ s -> (a,s)
 `s` is the type of the state and `a` the result of the stateful
 computations.
 
-Assignment in most other languages could be thought of as a stateful
-computation. For instance, when we do `x = 5` in an imperative language,
-it will usually assign the value `5` to the variable `x` and it will also
-have the value `5` as an expression. If you look at that functionally, you
-could look at it as a function that takes a state (that is, all the
-variables that have been assigned previously) and returns a result (in
-this case `5`) and a new state, which would be all the previous variable
-mappings plus the newly assigned variable.
+> Assignment in most other languages could be thought of as a stateful
+> computation. For instance, when we do `x = 5` in an imperative language,
+> it will usually assign the value `5` to the variable `x` and it will also
+> have the value `5` as an expression. If you look at that functionally, you
+> could look at it as a function that takes a state (that is, all the
+> variables that have been assigned previously) and returns a result (in
+> this case `5`) and a new state, which would be all the previous variable
+> mappings plus the newly assigned variable.
 
 This stateful computation, a function that takes a state and returns a
 result and a new state, can be thought of as a value with a context as

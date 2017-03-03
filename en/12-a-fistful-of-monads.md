@@ -109,12 +109,12 @@ can make that idea a bit less vague.
 Much to no one's surprise, `Maybe` is a monad, so let's explore it a bit
 more and see if we can combine it with what we know about monads.
 
-Make sure you understand
-[applicatives](#applicative-functors)
-at this point. It's good if you have a feel for how the various
-`Applicative` instances work and what kind of computations they represent,
-because monads are nothing more than taking our existing applicative
-knowledge and upgrading it.
+> Make sure you understand
+> [applicatives](#applicative-functors)
+> at this point. It's good if you have a feel for how the various
+> `Applicative` instances work and what kind of computations they represent,
+> because monads are nothing more than taking our existing applicative
+> knowledge and upgrading it.
 
 A value of type `Maybe a` represents a value of type `a` with the context of
 possible failure attached. A value of `Just "dharma"` means that the
@@ -295,9 +295,9 @@ in a monad. It always does the same thing as the `pure` function from the
 value and make a bogus I/O action that does nothing but yield that
 value. For `Maybe` it takes a value and wraps it in a `Just`.
 
-Just a reminder: `return` is nothing like the `return` that's in most other
-languages. It doesn't end function execution or anything, it just takes
-a normal value and puts it in a context.
+> Just a reminder: `return` is nothing like the `return` that's in most other
+> languages. It doesn't end function execution or anything, it just takes
+> a normal value and puts it in a context.
 
 ![hmmm yaes](img/tur2.png)
 
@@ -1111,9 +1111,9 @@ minimal context, it doesn't have any extra effect (like failing in `Maybe`
 or resulting in more non-determinism for lists) but it does present
 something as its result.
 
-When you have non-deterministic values interacting, you can view their
-computation as a tree where every possible result in a list represents a
-separate branch.
+> When you have non-deterministic values interacting, you can view their
+> computation as a tree where every possible result in a list represents a
+> separate branch.
 
 Here's the previous expression rewritten in `do` notation:
 

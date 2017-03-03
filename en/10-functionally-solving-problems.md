@@ -63,10 +63,10 @@ What would the type of that function be? We want it to take a string as
 a parameter and produce a number as its result. So it will probably be
 something like `solveRPN :: (Num a) => String -> a`.
 
-*Protip:* it really helps to first think what the type declaration of a
-function should be before concerning ourselves with the implementation
-and then write it down. In Haskell, a function's type declaration tells
-us a whole lot about the function, due to the very strong type system.
+> *Protip:* it really helps to first think what the type declaration of a
+> function should be before concerning ourselves with the implementation
+> and then write it down. In Haskell, a function's type declaration tells
+> us a whole lot about the function, due to the very strong type system.
 
 ![HA HA HA](img/calculator.png)
 
@@ -372,11 +372,11 @@ additional 110 minutes to go to *B2* and then cross over! So obviously,
 the cheapest path to *A2* is `B, C, A`. In the same way, the cheapest way
 to *B2* is to go forward from *A1* and then cross over.
 
-*Maybe you're asking yourself*: but what about getting to *A2* by first
-crossing over at *B1* and then going on forward? Well, we already
-covered crossing from *B1* to *A1* when we were looking for the best way
-to *A1*, so we don't have to take that into account in the next step as
-well.
+> *Maybe you're asking yourself*: but what about getting to *A2* by first
+> crossing over at *B1* and then going on forward? Well, we already
+> covered crossing from *B1* to *A1* when we were looking for the best way
+> to *A1*, so we don't have to take that into account in the next step as
+> well.
 
 Now that we have the best path to *A2* and *B2*, we can repeat this
 indefinitely until we reach the end. Once we've gotten the best paths
@@ -463,14 +463,14 @@ simple algebraic data type that holds three integers for the lengths of
 its three road parts. We introduce a type synonym as well, saying that
 `RoadSystem` is a list of sections.
 
-We could also use a triple of `(Int, Int, Int)` to represent a road
-section. Using tuples instead of making your own algebraic data types is
-good for some small localized stuff, but it's usually better to make a
-new type for things like this. It gives the type system more information
-about what's what. We can use `(Int, Int, Int)` to represent a road
-section or a vector in 3D space and we can operate on those two, but
-that allows us to mix them up. If we use `Section` and `Vector` data types,
-then we can't accidentally add a vector to a section of a road system.
+> We could also use a triple of `(Int, Int, Int)` to represent a road
+> section. Using tuples instead of making your own algebraic data types is
+> good for some small localized stuff, but it's usually better to make a
+> new type for things like this. It gives the type system more information
+> about what's what. We can use `(Int, Int, Int)` to represent a road
+> section or a vector in 3D space and we can operate on those two, but
+> that allows us to mix them up. If we use `Section` and `Vector` data types,
+> then we can't accidentally add a vector to a section of a road system.
 
 Our road system from Heathrow to London can now be represented like
 this:
@@ -517,10 +517,10 @@ takes a pair of paths and a section and produces a new pair of paths.
 The type is `(Path, Path) -> Section -> (Path, Path)`. Let's go ahead
 and implement this function, because it's bound to be useful.
 
-*Hint:* it will be useful because
-`(Path, Path) -> Section -> (Path, Path)`
-can be used as the binary function for a left fold, which has to
-have a type of `a -> b -> a`
+> *Hint:* it will be useful because
+> `(Path, Path) -> Section -> (Path, Path)`
+> can be used as the binary function for a left fold, which has to
+> have a type of `a -> b -> a`
 
 ~~~~ {.haskell:hs name="code"}
 roadStep :: (Path, Path) -> Section -> (Path, Path)
@@ -588,12 +588,12 @@ this we can read that the best path to the next A is to start on B and
 then cross over to A and that the best path to the next B is to just go
 directly forward from the starting point at B.
 
-*Optimization tip:* when we do `priceA = sum $ map snd pathA`, we're
-calculating the price from the path on every step. We wouldn't have to
-do that if we implemented `roadStep` as a
-`(Path, Path, Int, Int) -> Section -> (Path, Path, Int, Int)`
-function where the integers represent
-the best price on A and B.
+> *Optimization tip:* when we do `priceA = sum $ map snd pathA`, we're
+> calculating the price from the path on every step. We wouldn't have to
+> do that if we implemented `roadStep` as a
+> `(Path, Path, Int, Int) -> Section -> (Path, Path, Int, Int)`
+> function where the integers represent
+> the best price on A and B.
 
 Now that we have a function that takes a pair of paths and a section and
 produces a new optimal path, we can just easily do a left fold over a

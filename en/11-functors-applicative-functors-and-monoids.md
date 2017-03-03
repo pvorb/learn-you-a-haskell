@@ -47,15 +47,15 @@ give me a function that takes an `a` and returns a `b` and a box with an `a`
 several of them) inside it. It kind of applies the function to the
 element inside the box.
 
-*A word of advice.* Many times the box analogy is used to help you get
-some intuition for how functors work, and later, we'll probably use the
-same analogy for applicative functors and monads. It's an okay analogy
-that helps people understand functors at first, just don't take it too
-literally, because for some functors the box analogy has to be stretched
-really thin to still hold some truth. A more correct term for what a
-functor is would be *computational context*. The context might be that
-the computation can have a value or it might have failed (`Maybe` and
-`Either a`) or that there might be more values (lists), stuff like that.
+> *A word of advice.* Many times the box analogy is used to help you get
+> some intuition for how functors work, and later, we'll probably use the
+> same analogy for applicative functors and monads. It's an okay analogy
+> that helps people understand functors at first, just don't take it too
+> literally, because for some functors the box analogy has to be stretched
+> really thin to still hold some truth. A more correct term for what a
+> functor is would be *computational context*. The context might be that
+> the computation can have a value or it might have failed (`Maybe` and
+> `Either a`) or that there might be more values (lists), stuff like that.
 
 If we want to make a type constructor an instance of `Functor`, it has to
 have a kind of `* -> *`, which means that it has to take exactly one
@@ -191,9 +191,9 @@ which is the same as `(+) 2`), you could write `(->) r` as `(r ->)`. How are
 functions functors? Well, let's take a look at the implementation, which
 lies in `Control.Monad.Instances`
 
-We usually mark functions that take anything and return anything as
-`a -> b`. `r -> a` is the same thing, we just used different letters for the
-type variables.
+> We usually mark functions that take anything and return anything as
+> `a -> b`. `r -> a` is the same thing, we just used different letters for the
+> type variables.
 
 ~~~~ {.haskell:hs name="code"}
 instance Functor ((->) r) where
@@ -316,9 +316,9 @@ a `Maybe`, an `Either String`, whatever. The expression `fmap (replicate 3)`
 will take a functor over any type and return a functor over a list of
 elements of that type.
 
-When we say *a functor over numbers*, you can think of that as *a
-functor that has numbers in it*. The former is a bit fancier and more
-technically correct, but the latter is usually easier to get.
+> When we say *a functor over numbers*, you can think of that as *a
+> functor that has numbers in it*. The former is a bit fancier and more
+> technically correct, but the latter is usually easier to get.
 
 This is even more apparent if we partially apply, say, `fmap (++"!")` and
 then bind it to a name in GHCI.
@@ -805,13 +805,13 @@ just `fmap` as an infix operator. Here's how it's defined:
 f <$> x = fmap f x
 ~~~~
 
-*Yo!* Quick reminder: type variables are independent of parameter names
-or other value names. The `f` in the function declaration here is a type
-variable with a class constraint saying that any type constructor that
-replaces `f` should be in the `Functor` typeclass. The `f` in the function
-body denotes a function that we map over `x`. The fact that we used `f` to
-represent both of those doesn't mean that they somehow represent the
-same thing.
+> *Yo!* Quick reminder: type variables are independent of parameter names
+> or other value names. The `f` in the function declaration here is a type
+> variable with a class constraint saying that any type constructor that
+> replaces `f` should be in the `Functor` typeclass. The `f` in the function
+> body denotes a function that we map over `x`. The fact that we used `f` to
+> represent both of those doesn't mean that they somehow represent the
+> same thing.
 
 By using `<$>`, the applicative style really shines, because now if we
 want to apply a function `f` between three applicative functors, we can
@@ -1059,8 +1059,8 @@ rarely used with the applicative style outside of code golf, but they're
 still interesting as applicatives, so let's take a look at how the
 function instance is implemented.
 
-If you're confused about what `(->) r` means, check out the previous
-section where we explain how `(->) r` is a functor.
+> If you're confused about what `(->) r` means, check out the previous
+> section where we explain how `(->) r` is a functor.
 
 ~~~~ {.haskell:hs name="code"}
 instance Applicative ((->) r) where
@@ -1198,8 +1198,8 @@ ghci> getZipList $ (,,) <$> ZipList "dog" <*> ZipList "cat" <*> ZipList "rat"
 [('d','c','r'),('o','a','a'),('g','t','t')]
 ~~~~
 
-The `(,,)` function is the same as `\x y z -> (x,y,z)`. Also, the `(,)`
-function is the same as `\x y -\> (x,y)`.
+> The `(,,)` function is the same as `\x y z -> (x,y,z)`. Also, the `(,)`
+> function is the same as `\x y -\> (x,y)`.
 
 Aside from `zipWith`, the standard library has functions such as `zipWith3`,
 `zipWith4`, all the way up to 7. `zipWith` takes a function that takes two
