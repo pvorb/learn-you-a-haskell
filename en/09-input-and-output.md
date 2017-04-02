@@ -591,7 +591,7 @@ main = do
 So as you can see, it's useful for encapsulating the
 `if <something> then do <some I/O action> else return ()` pattern.
 
-`sequence` takes a list of I/O actions and returns an I/O actions that
+`sequence` takes a list of I/O actions and returns an I/O action that
 will perform those actions one after the other. The result contained in
 that I/O action will be a list of the results of all the I/O actions
 that were performed. Its type signature is
