@@ -379,8 +379,8 @@ list. If we prepend `3` to it, it becomes `[3]`. If we prepend `2` to that, it
 becomes `[2,3]`, and so on.
 
 > *Note:* `[]`, `[[]]` and `[[],[],[]]` are all different things. The first one
-> is an empty list, the seconds one is a list that contains one empty
-> list, the third one is a list that contains three empty lists.
+> is an empty list, the second one is a list that contains one empty list, the
+> third one is a list that contains three empty lists.
 
 If you want to get an element out of a list by index, use `!!`. The
 indices start at 0.
