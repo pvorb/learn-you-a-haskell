@@ -1073,10 +1073,10 @@ easy to wrap them into a `State` wrapper. Watch:
 import Control.Monad.State
 
 pop :: State Stack Int
-pop = State $ \(x:xs) -> (x,xs)
+pop = state $ \(x:xs) -> (x,xs)
 
 push :: Int -> State Stack ()
-push a = State $ \xs -> ((),a:xs)
+push a = state $ \xs -> ((),a:xs)
 ~~~~
 
 `pop` is already a stateful computation and `push` takes an `Int` and returns
