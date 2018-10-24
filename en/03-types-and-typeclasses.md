@@ -449,7 +449,7 @@ integral (whole) numbers. In this typeclass are `Int` and `Integer`.
 `Floating` includes only floating point numbers, so `Float` and `Double`.
 
 A very useful function for dealing with numbers is `fromIntegral`. It has
-a type declaration of `fromIntegral :: (Num b, Integral a) => a -> b`.
+a type declaration of `fromIntegral :: (Integral a, Num b) => a -> b`.
 From its type signature we see that it takes an integral number and
 turns it into a more general number. That's useful when you want
 integral and floating point types to work together nicely. For instance,
