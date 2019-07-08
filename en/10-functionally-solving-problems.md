@@ -329,7 +329,7 @@ In the RPN calculator section, we first figured out that when
 calculating an expression by hand, we'd keep a sort of stack in our
 minds and then go over the expression one item at a time. We decided to
 use a list of strings to represent our expression. Finally, we used a
-left fold to walk oevr the list of strings while keeping a stack to
+left fold to walk over the list of strings while keeping a stack to
 produce a solution.
 
 Okay, so how would we figure out the shortest path from Heathrow to
