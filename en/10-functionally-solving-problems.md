@@ -388,7 +388,7 @@ B. We could say that we also took into account the best paths on A and
 on B in the first step, only they were both empty paths with a cost of
 0.
 
-Here's a summary. To get the bast path from Heathrow to London, we do
+Here's a summary. To get the best path from Heathrow to London, we do
 this: first we see what the best path to the next crossroads on main
 road A is. The two options are going directly forward or starting at the
 opposite road, going forward and then crossing over. We remember the
