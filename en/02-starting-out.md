@@ -684,7 +684,9 @@ natural numbers is ![set
 notation](img/setnotation.png). The part before
 the pipe is called the output function, `x` is the variable, `N` is the
 input set and `x <= 10` is the predicate. That means that the set
-contains the doubles of all natural numbers that satisfy the predicate.
+contains the doubles of all natural numbers that satisfy the predicate. You
+would read this as, "The set of all `2x` such that `x` is in the set of all
+natural numbers, and `x` is less than or equal to 10."
 
 If we wanted to write that in Haskell, we could do something like `take
 10 [2,4..]`. But what if we didn't want doubles of the first 10 natural
