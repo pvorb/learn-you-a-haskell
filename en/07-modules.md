@@ -334,7 +334,7 @@ contain if it were called with the same predicate and the same list. The
 second list contains the part of the list that would have been dropped.
 
 ~~~~ {.haskell:ghci name="code"}
-ghci> let (fw, rest) = span (/=' ') "This is a sentence" in "First word:" ++ fw ++ ", the rest:" ++ rest
+ghci> let (fw, rest) = span (/=' ') "This is a sentence" in "First word: " ++ fw ++ ", the rest:" ++ rest
 "First word: This, the rest: is a sentence"
 ~~~~
 
