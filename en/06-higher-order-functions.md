@@ -1081,7 +1081,7 @@ style?
 fn x = ceiling (negate (tan (cos (max 50 x))))
 ~~~~
 
-We can't just get rid of the `x` on both right right sides. The `x` in the
+We can't just get rid of the `x` on both right sides. The `x` in the
 function body has parentheses after it. `cos (max 50)` wouldn't make
 sense. You can't get the cosine of a function. What we can do is express
 `fn` as a composition of functions.
