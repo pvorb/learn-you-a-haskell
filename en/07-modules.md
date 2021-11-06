@@ -1291,7 +1291,7 @@ fromList [(3,104),(5,103),(6,339)]
 
 These were just a few functions from `Data.Map`. You can see a complete
 list of functions in the
-[documentation](http://www.haskell.org/ghc/docs/latest/html/libraries/containers/Data-Map.html#v%3Aassocs).
+[documentation](https://hackage.haskell.org/package/containers/docs/Data-Map-Strict.html).
 
 Data.Set
 --------
