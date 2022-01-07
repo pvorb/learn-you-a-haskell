@@ -1511,8 +1511,7 @@ Take salad out of the oven
 Command line arguments
 ----------------------
 
-![COMMAND LINE ARGUMENTS!!!
-ARGH](../img/arguments.png)
+![COMMAND LINE ARGUMENTS!!! ARGH](../img/arguments.png)
 
 Dealing with command line arguments is pretty much a necessity if you
 want to make a script or application that runs on a terminal. Luckily,
@@ -1818,8 +1817,7 @@ to use exceptions, which we will meet soon.
 Randomness
 ----------
 
-![this picture is the ultimate source of randomness and
-wackiness](../img/random.png)
+![this picture is the ultimate source of randomness and wackiness](../img/random.png)
 
 Many times while programming, you need to get some random data. Maybe
 you're making a game where a die needs to be thrown or you need to
@@ -2244,8 +2242,7 @@ provides us with a function that we can reuse easily.
 Bytestrings
 -----------
 
-![like normal string, only they byte ... what a pedestrian pun this
-is](../img/chainchomp.png)
+![like normal string, only they byte ... what a pedestrian pun this is](../img/chainchomp.png)
 
 Lists are a cool and useful data structure. So far, we've used them
 pretty much everywhere. There are a multitude of functions that operate
@@ -2498,9 +2495,7 @@ ghci> head []
 *** Exception: Prelude.head: empty list
 ~~~~
 
-![Stop right there, criminal scum! Nobody breaks the law on my watch!
-Now pay your fine or it's off to
-jail.](../img/police.png)
+![Stop right there, criminal scum! Nobody breaks the law on my watch! Now pay your fine or it's off to jail.](../img/police.png)
 
 Pure code can throw exceptions, but they can only be caught in the
 I/O part of our code (when we're inside a *do* block that goes into

@@ -1869,7 +1869,7 @@ for the *data* keyword.
 Monoids
 -------
 
-![wow this is pretty much the gayest pirate ship ever](../img/pirateship.png)
+![pirate ship](../img/pirateship.png)
 
 Type classes in Haskell are used to present an interface for types that
 have some behavior in common. We started out with simple type classes

@@ -45,6 +45,7 @@ So what's Haskell?
 ------------------
 
 ![fx](../img/fx.png) 
+
 Haskell is a *purely
 functional programming language*. In imperative languages you get things
 done by giving the computer a sequence of tasks and then it executes
@@ -70,6 +71,7 @@ deduce (and even prove) that a function is correct and then build more
 complex functions by gluing simple functions together.
 
 ![lazy](../img/lazy.png) 
+
 Haskell is *lazy*. That
 means that unless specifically told otherwise, Haskell won't execute
 functions and calculate things until it's really forced to show you a
@@ -95,6 +97,7 @@ initial data and efficiently transform and mend it so it resembles what
 you want at the end.
 
 ![boat](../img/boat.png) 
+
 Haskell is *statically
 typed*. When you compile your program, the compiler knows which piece of
 code is a number, which is a string and so on. That means that a lot of

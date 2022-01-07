@@ -44,6 +44,7 @@ ghci> :t 4 == 5
 ~~~~
 
 ![bomb](../img/bomb.png) 
+
 Here we see that doing `:t`
 on an expression prints out the expression followed by `::` and its type.
 `::` is read as "has type of". Explicit types are always denoted with the
