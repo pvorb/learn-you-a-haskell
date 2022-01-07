@@ -1,9 +1,7 @@
 For a Few Monads More
 =====================
 
-![there are two kinds of people in the world, my friend. those who learn
-them a haskell and those who have the job of coding
-java](img/clint.png)
+![there are two kinds of people in the world, my friend. those who learn them a haskell and those who have the job of coding java](../img/clint.png)
 
 We've seen how monads can be used to take values with contexts and apply
 them to functions and how using `>>=` or `do` notation allows us to focus
@@ -72,8 +70,7 @@ ghci> isBigGang 30
 (True,"Compared gang size to 9.")
 ~~~~
 
-![when you have to poop, poop, don't
-talk](img/tuco.png)
+![when you have to poop, poop, don't talk](../img/tuco.png)
 
 So far so good. `isBigGang` takes a normal value and returns a value with
 a context. As we've just seen, feeding it a normal value is not a
@@ -278,8 +275,7 @@ instance (Monoid w) => Monad (Writer w) where
     (Writer (x,v)) >>= f = let (Writer (y, v')) = f x in Writer (y, v `mappend` v')
 ~~~~
 
-![when you have to poop, poop, don't
-talk](img/angeleyes.png)
+![when you have to poop, poop, don't talk](../img/angeleyes.png)
 
 First off, let's examine `>>=`. Its implementation is essentially the
 same as `applyLog`, only now that our tuple is wrapped in the
@@ -562,7 +558,7 @@ left instead of to the right.
 
 ### Difference lists
 
-![cactuses](img/cactus.png)
+![cactuses](../img/cactus.png)
 
 Because lists can sometimes be inefficient when repeatedly appended in
 this manner, it's best to use a data structure that always supports
@@ -734,7 +730,7 @@ head. Enjoy!
 Reader? Ugh, not this joke again.
 ---------------------------------
 
-![bang youre dead](img/revolver.png)
+![bang youre dead](../img/revolver.png)
 
 In the [chapter about
 applicatives](#functors-applicative-functors-and-monoids), we saw that
@@ -860,7 +856,7 @@ out.
 Tasteful stateful computations
 ------------------------------
 
-![don't jest with texas](img/texas.png)
+![don't jest with texas](../img/texas.png)
 
 Haskell is a pure language and because of that, our programs are made of
 functions that can't change any global state or variables, they can only
@@ -1044,7 +1040,7 @@ kept unchanged, because `return` has to put a value in a minimal context.
 So `return` will make a stateful computation that presents a certain value
 as the result and keeps the state unchanged.
 
-![im a cop](img/badge.png)
+![im a cop](../img/badge.png)
 
 What about `>>=`? Well, the result of feeding a stateful computation to
 a function with `>>=` has to be a stateful computation, right? So we
@@ -1389,7 +1385,7 @@ Let's see what they are then!
 
 ### liftM and friends
 
-![im a cop too](img/wolf.png)
+![im a cop too](../img/wolf.png)
 
 When we started our journey to the top of Monad Mountain, we first
 looked at functors, which are for things that can be mapped over. Then,
@@ -1664,7 +1660,7 @@ joinedMaybes = do
     m
 ~~~~
 
-![im a cop too as well also](img/tipi.png)
+![im a cop too as well also](../img/tipi.png)
 
 Perhaps the most interesting thing about `join` is that for every monad,
 feeding a monadic value to a function with `>>=` is the same thing as
@@ -1883,7 +1879,7 @@ your fold goes along its way.
 
 ### Making a safe RPN calculator
 
-![i've found yellow!](img/miner.png)
+![i've found yellow!](../img/miner.png)
 
 When we were solving the problem of [implementing a RPN
 calculator](#reverse-polish-notation-calculator), we noted that it worked
@@ -2124,7 +2120,7 @@ canReachIn x start end = end `elem` inMany x start
 Making monads
 -------------
 
-![kewl](img/spearhead.png)
+![kewl](../img/spearhead.png)
 
 In this section, we're going to look at an example of how a type gets
 made, identified as a monad and then given the appropriate `Monad`
@@ -2244,7 +2240,7 @@ likely to occur. Also, there's a 75% chance that exactly one of `'c'` or
 `'d'` will happen. `'c'` and `'d'` are also equally likely to happen. Here's a
 picture of a probability list that models this scenario:
 
-![probs](img/prob.png)
+![probs](../img/prob.png)
 
 What are the chances for each of these letters to occur? If we were to
 draw this as just four boxes, each with a probability, what would those
@@ -2293,7 +2289,7 @@ instance Monad Prob where
     fail _ = Prob []
 ~~~~
 
-![ride em cowboy](img/ride.png)
+![ride em cowboy](../img/ride.png)
 
 Because we already did all the hard work, the instance is very simple.
 We also defined the `fail` function, which is the same as it is for lists,
