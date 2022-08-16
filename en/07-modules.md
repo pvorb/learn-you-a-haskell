@@ -111,7 +111,7 @@ import qualified Data.Map as M
 Now, to reference `Data.Map`'s `filter` function, we just use `M.filter`.
 
 Use [this handy
-reference](http://www.haskell.org/ghc/docs/latest/html/libraries/) to
+reference](https://downloads.haskell.org/~ghc/latest/docs/libraries/index.html) to
 see which modules are in the standard library. A great way to pick up
 new Haskell knowledge is to just click through the standard library
 reference and explore the modules and their functions. You can also view
