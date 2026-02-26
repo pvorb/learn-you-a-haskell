@@ -29,9 +29,16 @@ What is this repo for?
 ----------------------
 
 With the help of this repo, you can make your own ebook version of the book.
-Make sure you have Pandoc installed and pdflatex (for making the pdf) and then 
+Make sure you have Pandoc installed and pdflatex (for making the pdf) and then
 use 'make all', 'make epubs' or 'make pdfs' depending on what you want.
 The output will be written to a directory called 'out'
+
+Building on Windows
+----------------------
+
+For users on native Windows, a batch script is provided to replicate the
+functionality of the Makefile.
+using 'build all', 'build epubs' or 'build pdfs' depending on what you want.
 
 License
 -------
